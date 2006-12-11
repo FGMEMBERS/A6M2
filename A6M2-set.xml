@@ -1,0 +1,140 @@
+<!--
+************************************************************************
+A6M2 'Zero'
+Dec 2006 Syd Adams
+************************************************************************
+-->
+
+<PropertyList>
+ <sim>
+  <description>A6M2 Zero</description>
+  <author>Syd Adams</author>
+      <startup>
+    <splash-texture>Aircraft/A6M2/splash.rgb</splash-texture>
+    </startup>
+  
+  <flight-model>yasim</flight-model>
+  <aero>a6m2</aero>
+  <fuel-fraction>0.80</fuel-fraction>
+
+  <virtual-cockpit archive="y">true</virtual-cockpit>
+  <allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>
+
+  <sound>
+   <path>Aircraft/p51d/p51d-sound.xml</path>
+  </sound>
+
+  <model>
+   <path>Aircraft/A6M2/Models/a6m2-anim.xml</path>
+  </model> 
+
+  <view n="0">
+   <internal archive="y">true</internal>
+   <config>
+    <x-offset-m archive="y" type="double">0.0</x-offset-m>
+    <y-offset-m archive="y" type="double">0.792</y-offset-m>
+    <z-offset-m archive="y" type="double">0.5</z-offset-m>
+    <pitch-offset-deg>-5.0</pitch-offset-deg>
+   </config>
+  </view>
+  
+  <chase-distance-m>18</chase-distance-m>
+
+  <hud>
+   <enable3d>false</enable3d>
+  </hud>
+ </sim>
+
+ <engines>
+  <engine>
+   <rpm type="double">700</rpm>
+   <!-- fake unimplemented settings -->
+   <fuel-pump-psi type="double">18</fuel-pump-psi>
+   <oil-pressure-psi type="double">75</oil-pressure-psi>
+  </engine>
+ </engines>
+
+ <consumables>
+  <fuel>
+   <tank n="0">
+    <level-gal_us>50</level-gal_us>
+   </tank>
+   <tank n="1">
+    <level-gal_us>50</level-gal_us>
+   </tank>
+  </fuel>
+ </consumables>
+ <controls>
+ <gear>
+ <brake-parking>1</brake-parking>
+ </gear>
+ </controls>
+ 
+  <input>
+    <keyboard>
+      <key n="12"> 
+          <name>Ctrl-L</name>
+          <desc>Toggle Tailwheel Lock.</desc>
+          <binding> 
+            <command>property-toggle</command>
+            <property>controls/gear/tailwheel-lock</property>
+          </binding>
+      </key>
+
+      <key n="67">
+        <name>C</name>
+        <desc>Toggle Canopy</desc>
+        <binding>
+          <command>nasal</command>
+          <script>f4u.toggle_canopy()</script>
+        </binding>
+      </key>
+
+      <key n="78"> 
+        <name>N</name>
+        <desc>Propeller Coarse.</desc>
+        <binding> 
+          <command>property-adjust</command>
+          <property>/controls/engines/engine/propeller-pitch</property>
+          <step type="double">0.1</step>
+          <min type="double">-1</min>
+          <max type="double">1</max>
+        </binding>
+      </key>
+
+      <key n="110"> 
+        <name>n</name>
+        <desc>Propeller Fine.</desc>
+        <binding> 
+          <command>property-adjust</command>
+          <property>/controls/engines/engine/propeller-pitch</property>
+          <step type="double">-0.1</step>
+          <min type="double">-1</min>
+          <max type="double">1</max>
+        </binding>
+      </key>
+        <key n="79"> 
+          <name>O</name>
+          <desc>Hook down.</desc>
+          <binding> 
+            <command>property-assign</command>
+            <property>controls/gear/tailhook</property>
+            <value type="double">1.0</value>
+          </binding>
+        </key>
+        <key n="111"> 
+          <name>o</name>
+          <desc>Hook Up.</desc>
+          <binding> 
+            <command>property-assign</command>
+            <property>controls/gear/tailhook</property>
+            <value type="double">0.0</value>
+          </binding>
+        </key>
+     </keyboard>
+ </input>
+
+
+</PropertyList>
+
+
