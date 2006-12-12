@@ -58,7 +58,7 @@ Fuel capacity 144 US gal
 <wing x="0.0" y="0.4" z="-0.35" taper="0.5" incidence="1.0"
       length="5.6" chord="2.5" sweep="0." dihedral="5.12" camber="0.1">
   <stall aoa="14" width="12" peak="1.5"/>
-  <flap0 start="0.0" end="0.4" lift="1.6" drag="1.9"/>
+  <flap0 start="0.0" end="0.4" lift="1.7" drag="1.9"/>
   <flap1 start="0.4" end="1.0" lift="1.4" drag="1.1"/>
   <control-input axis="/controls/flight/flaps" control="FLAP0"/>
   <control-output control="FLAP0" prop="/surface-positions/flap-pos-norm"/>

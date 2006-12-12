@@ -9,6 +9,7 @@ Dec 2006 Syd Adams
  <sim>
   <description>A6M2 Zero</description>
   <author>Syd Adams</author>
+  <status>development</status>
       <startup>
     <splash-texture>Aircraft/A6M2/splash.rgb</splash-texture>
     </startup>
@@ -43,6 +44,14 @@ Dec 2006 Syd Adams
   <hud>
    <enable3d>false</enable3d>
   </hud>
+  
+         <replay>
+        <disable>1</disable>
+        </replay>
+
+        <multiplay>
+        <chat_display>1</chat_display>
+        </multiplay>
  </sim>
 
  <engines>
