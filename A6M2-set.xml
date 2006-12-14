@@ -11,7 +11,7 @@ Dec 2006 Syd Adams
   <author>Syd Adams</author>
   <status>development</status>
       <startup>
-    <splash-texture>Aircraft/A6M2/splash.rgb</splash-texture>
+    <splash-texture>Aircraft/A6M2/splash1.rgb</splash-texture>
     </startup>
   
   <flight-model>yasim</flight-model>
@@ -142,6 +142,12 @@ Dec 2006 Syd Adams
         </key>
      </keyboard>
  </input>
+ 
+     <nasal>
+        <A6M2>
+        <file>Aircraft/A6M2/Nasal/a6m2.nas</file>
+        </A6M2>
+    </nasal>
 
 
 </PropertyList>

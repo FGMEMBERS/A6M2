@@ -146,7 +146,7 @@ Fuel capacity 144 US gal
                  dst0="0.5" dst1="-0.5"/>
 </gear>
 
-    <hook x="-4.47" y="0.0" z="-0.378" length="0.73" down-angle="40" up-angle="-5"> 
+    <hook x="-4.47" y="0.0" z="-0.378" length="0.73" down-angle="80" up-angle="-5"> 
       <control-input axis="/controls/gear/tailhook" control="HEXTEND"/>
       <control-speed control="HEXTEND" transition-time="3"/>
     </hook>

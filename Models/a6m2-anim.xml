@@ -79,7 +79,7 @@
   <type>spin</type>
   <object-name>propdisc</object-name>
   <property>/engines/engine/rpm</property>
-  <factor>0.25</factor>
+  <factor>0.005</factor>
   <center>
   <x-m>-2.391</x-m>
    <y-m>0.0</y-m>
