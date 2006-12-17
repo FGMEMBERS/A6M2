@@ -2,6 +2,17 @@
 
 <path>a6m2.ac</path>
 
+<animation>
+  <type>select</type>
+  <object-name>pilot</object-name>
+  <condition>
+   <greater-than>
+    <property>sim/current-view/view-number</property>
+    <value>0</value>
+   </greater-than>
+  </condition>
+ </animation>
+
 
 <animation>
   <type>select</type>
@@ -270,6 +281,10 @@
       <dep>0</dep>
     </entry>
     <entry>
+      <ind>0.2</ind>
+      <dep>0</dep>
+    </entry>
+    <entry>
       <ind>1.0</ind>
       <dep>85</dep>
     </entry>
@@ -297,6 +312,10 @@
       <dep>0</dep>
     </entry>
     <entry>
+      <ind>0.2</ind>
+      <dep>0</dep>
+    </entry>
+    <entry>
       <ind>1.0</ind>
       <dep>-85</dep>
     </entry>
@@ -305,6 +324,66 @@
    <x-m>-0.602</x-m>
    <y-m>1.730</y-m>
    <z-m>-0.294</z-m>
+  </center>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+  <animation>
+  <type>rotate</type>
+  <object-name>RGdoor</object-name>
+  <property>gear/gear[1]/position-norm</property>
+  <interpolation>
+    <entry>
+      <ind>0</ind>
+      <dep>0</dep>
+    </entry>
+    <entry>
+      <ind>0.2</ind>
+      <dep>85</dep>
+    </entry>
+    <entry>
+      <ind>1.0</ind>
+      <dep>85</dep>
+    </entry>
+  </interpolation>
+  <center>
+   <x-m>-0.657</x-m>
+   <y-m>0.196</y-m>
+   <z-m>-0.549</z-m>
+  </center>
+  <axis>
+   <x>-1</x>
+   <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+  <animation>
+  <type>rotate</type>
+  <object-name>LGdoor</object-name>
+  <property>gear/gear[0]/position-norm</property>
+  <interpolation>
+    <entry>
+      <ind>0</ind>
+      <dep>0</dep>
+    </entry>
+    <entry>
+      <ind>0.2</ind>
+      <dep>-85</dep>
+    </entry>
+    <entry>
+      <ind>1.0</ind>
+      <dep>-85</dep>
+    </entry>
+  </interpolation>
+  <center>
+   <x-m>-0.657</x-m>
+   <y-m>-0.196</y-m>
+   <z-m>-0.549</z-m>
   </center>
   <axis>
    <x>-1</x>
