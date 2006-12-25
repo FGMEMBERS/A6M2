@@ -2,6 +2,37 @@
 
 <path>a6m2.ac</path>
 
+ <model>
+   <path>Aircraft/A6M2/Instruments/vsi.xml</path>
+   <offsets>
+     <x-m>-0.230</x-m>
+     <y-m>0.131</y-m>
+     <z-m>0.391</z-m>
+     <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+ </model>
+ 
+ <model>
+   <path>Aircraft/A6M2/Instruments/ai.xml</path>
+   <offsets>
+     <x-m>-0.229</x-m>
+     <y-m>-0.036</y-m>
+     <z-m>0.500</z-m>
+     <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+ </model>
+
+ <model>
+   <path>Aircraft/A6M2/Instruments/turn.xml</path>
+   <offsets>
+     <x-m>-0.229</x-m>
+     <y-m>0.057</y-m>
+     <z-m>0.500</z-m>
+     <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+ </model>
+
+
 <animation>
   <type>select</type>
   <object-name>pilot</object-name>
@@ -105,6 +136,19 @@
 
 
 <!-- CONTROL SURFACES -->
+
+ <animation>
+  <type>translate</type>
+  <object-name>glass</object-name>
+  <object-name>canopy</object-name>
+  <property>/controls/canopy/position-norm</property>
+  <factor>0.73</factor>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
 
  <animation>
   <type>rotate</type>

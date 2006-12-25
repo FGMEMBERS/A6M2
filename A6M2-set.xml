@@ -113,7 +113,13 @@ Dec 2006 Syd Adams
    </tank>
   </fuel>
  </consumables>
+ 
  <controls>
+ <canopy>
+ <enabled type="bool">true</enabled>
+ <position-norm>0.0</position-norm>
+ <opened type="double" >0.0</opened>
+  </canopy>
  <gear>
  <brake-parking>1</brake-parking>
  </gear>
@@ -130,14 +136,14 @@ Dec 2006 Syd Adams
           </binding>
       </key>
 
-      <key n="67">
-        <name>C</name>
-        <desc>Toggle Canopy</desc>
-        <binding>
-          <command>nasal</command>
-          <script>f4u.toggle_canopy()</script>
-        </binding>
-      </key>
+			<key n="4">
+				<name>Ctrl-D</name>
+				<desc>Open/close canopy</desc>
+				<binding>
+					<command>property-toggle</command>
+					<property>controls/canopy/opened</property>
+				</binding>
+			</key>
 
       <key n="78"> 
         <name>N</name>
@@ -189,6 +195,16 @@ Dec 2006 Syd Adams
         </A6M2>
     </nasal>
 
+    <help>
+        <title>A6M2 Model 21</title>
+        <line></line>
+        <text>   </text>
+        <line></line>
+        <key>
+        <name>CTRL-D</name>
+        <desc>Open / Close Canopy</desc>
+        </key>
+    </help>
 
 </PropertyList>
 
