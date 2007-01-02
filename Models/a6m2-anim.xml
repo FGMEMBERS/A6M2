@@ -32,6 +32,25 @@
    </offsets>
  </model>
 
+ <model>
+   <path>Aircraft/A6M2/Instruments/asi.xml</path>
+   <offsets>
+     <x-m>-0.229</x-m>
+     <y-m>-0.108</y-m>
+     <z-m>0.391</z-m>
+     <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+ </model>
+
+ <model>
+   <path>Aircraft/A6M2/Instruments/mp.xml</path>
+   <offsets>
+     <x-m>-0.222</x-m>
+     <y-m>0.131</y-m>
+     <z-m>0.300</z-m>
+     <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+ </model>
 
 <animation>
   <type>select</type>
@@ -432,6 +451,32 @@
   <axis>
    <x>-1</x>
    <y>0</y>
+   <z>0</z>
+  </axis>
+ </animation>
+
+  <animation>
+  <type>rotate</type>
+  <object-name>rrstrut</object-name>
+  <property>gear/gear[0]/position-norm</property>
+  <interpolation>
+    <entry>
+      <ind>0</ind>
+      <dep>0</dep>
+    </entry>
+    <entry>
+      <ind>1.0</ind>
+      <dep>40</dep>
+    </entry>
+  </interpolation>
+  <center>
+   <x-m>5.479</x-m>
+   <y-m>0</y-m>
+   <z-m>-0.253</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
    <z>0</z>
   </axis>
  </animation>

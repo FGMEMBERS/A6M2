@@ -22,7 +22,7 @@ Dec 2006 Syd Adams
   <allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>
 
   <sound>
-   <path>Aircraft/p51d/p51d-sound.xml</path>
+   <path>Aircraft/A6M2/a6m2-sound.xml</path>
   </sound>
 
   <model>
@@ -92,6 +92,17 @@ Dec 2006 Syd Adams
         <multiplay>
         <chat_display>1</chat_display>
         </multiplay>
+        
+            <help>
+        <title>A6M2 Model 21</title>
+        <line></line>
+        <text></text>
+        <line></line>
+        <key>
+        <name>CTRL-D</name>
+        <desc>Open / Close Canopy</desc>
+        </key>
+    </help>
  </sim>
 
  <engines>
@@ -195,16 +206,7 @@ Dec 2006 Syd Adams
         </A6M2>
     </nasal>
 
-    <help>
-        <title>A6M2 Model 21</title>
-        <line></line>
-        <text>   </text>
-        <line></line>
-        <key>
-        <name>CTRL-D</name>
-        <desc>Open / Close Canopy</desc>
-        </key>
-    </help>
+
 
 </PropertyList>
 
