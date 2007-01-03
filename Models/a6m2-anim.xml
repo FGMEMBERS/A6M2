@@ -43,11 +43,21 @@
  </model>
 
  <model>
-   <path>Aircraft/A6M2/Instruments/mp.xml</path>
+   <path>Aircraft/A6M2/Instruments/boost.xml</path>
    <offsets>
      <x-m>-0.222</x-m>
-     <y-m>0.131</y-m>
+     <y-m>0.299</y-m>
      <z-m>0.300</z-m>
+     <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+ </model>
+
+ <model>
+   <path>Aircraft/A6M2/Instruments/tach.xml</path>
+   <offsets>
+     <x-m>-0.230</x-m>
+     <y-m>0.299</y-m>
+     <z-m>0.391</z-m>
      <pitch-deg>-5.0</pitch-deg>
    </offsets>
  </model>

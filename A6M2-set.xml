@@ -1,21 +1,21 @@
 <!--
 ************************************************************************
 A6M2 'Zero'
-Dec 2006 Syd Adams
+Dec 2006 Syd Adams and Tat Nishioka
 ************************************************************************
 -->
 
 <PropertyList>
  <sim>
   <description>A6M2 Zero</description>
-  <author>Syd Adams</author>
+  <author>Syd Adams - Tat Nishioka</author>
   <status>development</status>
       <startup>
     <splash-texture>Aircraft/A6M2/splash1.rgb</splash-texture>
     </startup>
   
   <flight-model>yasim</flight-model>
-  <aero>a6m2</aero>
+  <aero>a6m2b</aero>
   <fuel-fraction>0.80</fuel-fraction>
 
   <virtual-cockpit archive="y">true</virtual-cockpit>
@@ -27,7 +27,19 @@ Dec 2006 Syd Adams
 
   <model>
    <path>Aircraft/A6M2/Models/a6m2-anim.xml</path>
+   <A6M2>
+   <texture n="0">Zero.rgb</texture>
+   <texture n="1">Zero-green.rgb</texture>
+   <!--  set livery-num  to change livery / paint scheme  -->
+   <livery-num type="int">1</livery-num>
+   </A6M2>
   </model> 
+  
+      <systems>
+        <electrical>
+        <path></path>
+        </electrical>
+     </systems>
 
   <number-views>8</number-views>
   
@@ -202,6 +214,7 @@ Dec 2006 Syd Adams
  
      <nasal>
         <A6M2>
+        <file>Aircraft/A6M2/Nasal/electrical.nas</file>
         <file>Aircraft/A6M2/Nasal/a6m2.nas</file>
         </A6M2>
     </nasal>
