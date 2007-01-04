@@ -4,19 +4,6 @@
  <path>turn.ac</path>
 
  <animation>
-  <type>material</type>
-  <object-name>TURN.face</object-name>
-  <object-name>TURN.needle</object-name>
-  <object-name>TURN.ball</object-name>
-  <emission>
-    <factor-prop>/controls/lighting/instruments-norm</factor-prop>
-    <red>0.5</red>
-    <green>0.25</green>
-    <blue>0.25</blue>
-  </emission>
- </animation>
-
- <animation>
   <type>rotate</type>
   <object-name>TURN.ball</object-name>
   <property>/instrumentation/slip-skid-ball/indicated-slip-skid</property>

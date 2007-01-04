@@ -4,18 +4,6 @@
  <path>tach.ac</path>
 
  <animation>
-  <type>material</type>
-  <object-name>TACH.face</object-name>
-  <object-name>TACH.needle</object-name>
-  <emission>
-    <factor-prop>/controls/lighting/instruments-norm</factor-prop>
-    <red>0.5</red>
-    <green>0.25</green>
-    <blue>0.25</blue>
-  </emission>
- </animation>
-
- <animation>
   <type>rotate</type>
   <object-name>TACH.needle</object-name>
   <property>/engines/engine/rpm</property>

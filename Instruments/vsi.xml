@@ -4,20 +4,6 @@
 
  <path>vsi.ac</path>
 
-  
-  <animation>
-  <type>material</type>
-    <object-name>VSI.face</object-name>
-    <object-name>VSI.needle</object-name>
-    <global type="bool">true</global>
-  <emission>
-    <red>0.5</red>
-    <green>0.2</green>
-    <blue>0.0</blue>
-    <factor-prop>/controls/lighting/instruments-norm</factor-prop>
-  </emission>
-</animation>
-
   <animation>
   <type>rotate</type>
   <object-name>VSI.needle</object-name>

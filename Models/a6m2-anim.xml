@@ -62,6 +62,26 @@
    </offsets>
  </model>
 
+ <model>
+   <path>Aircraft/A6M2/Instruments/oiltemp.xml</path>
+   <offsets>
+     <x-m>-0.222</x-m>
+     <y-m>0.216</y-m>
+     <z-m>0.301</z-m>
+     <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+ </model>
+
+ <model>
+   <path>Aircraft/A6M2/Instruments/FO-psi.xml</path>
+   <offsets>
+     <x-m>-0.230</x-m>
+     <y-m>0.216</y-m>
+     <z-m>0.391</z-m>
+     <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+ </model>
+
 <animation>
   <type>select</type>
   <object-name>pilot</object-name>
