@@ -206,7 +206,7 @@ Fuel capacity: 520L (134 US gal) [3]
 
   <!-- left main -->
   <gear x="0.91" y="1.75" z="-1.918" compression="0.2" spring="0.7" damp="2.2"
-	dfric="0.05" sfric ="0.10">
+	dfric="0.2" sfric ="0.50">
     <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
     <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
     <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
@@ -216,7 +216,7 @@ Fuel capacity: 520L (134 US gal) [3]
 
   <!-- right main -->
   <gear x="0.91" y="-1.75" z="-1.918" compression="0.2" spring="0.7" damp="2.2"
-	dfric="0.05" sfric ="0.10">
+	dfric="0.2" sfric ="0.50">
     <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
     <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
     <control-input axis="/controls/gear/gear-down" control="EXTEND"/>

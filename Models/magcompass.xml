@@ -1,4 +1,3 @@
-<?xml version="1.0"?>
 <PropertyList>
 <path>magcompass.ac</path>
 
@@ -34,31 +33,42 @@
   </axis>
  </animation>
  
- <!--
 <animation>
   <type>pick</type>
-  <object-name>HdgKnob.LH</object-name>
-  <repeatable>true</repeatable>
-  <interval-sec>0.1</interval-sec>
-  <binding>
-    <command>property-assign</command>
-    <property>instrumentation/magnetic-compass/correction-deg</property>
-    <value>-1</value>
-  </binding>
+  <object-name>Correct.minus</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>true</repeatable>
+    <interval-sec>0.1</interval-sec>
+    <binding>
+      <command>property-adjust</command>
+      <property>instrumentation/magnetic-compass/correction-deg</property>
+    <step>-1.0</step>
+    <min>0</min>
+    <max>360</max>
+    <wrap>1</wrap>
+    </binding>
+  </action>
 </animation>
 
 <animation>
   <type>pick</type>
-  <object-name>HdgKnob.RH</object-name>
-  <repeatable>true</repeatable>
-  <interval-sec>0.1</interval-sec>
-  <binding>
-    <command>property-adjust</command>
-     <property>instrumentation/magnetic-compass/correction-deg</property>
-     <value>1</value>
-  </binding>
+  <object-name>Correct.plus</object-name>
+  <action>
+    <button>0</button>
+    <repeatable>true</repeatable>
+    <interval-sec>0.1</interval-sec>
+    <binding>
+      <command>property-adjust</command>
+      <property>instrumentation/magnetic-compass/correction-deg</property>
+    <step>1.0</step>
+    <min>0</min>
+    <max>360</max>
+    <wrap>1</wrap>
+    </binding>
+  </action>
+
 </animation>
- -->
 
 </PropertyList>
 
