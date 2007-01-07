@@ -1,10 +1,12 @@
 # Mitsubishi A6M2 model 21 
 var force = 1.0;
+var alt_m = 0.0;
 
 toggle_canopy = func{
 }
 
 updates = func{
+  setprop("/instrumentation/altimeter/indicated-altitude-m",getprop("/instrumentation/altimeter/indicated-altitude-ft") * 0.3048);
    force = getprop("/accelerations/pilot-g");
    if(force == nil) {force = 1.0;}
    eyepoint = getprop("sim/view/config/y-offset-m") +0.01;

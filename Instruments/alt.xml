@@ -1,17 +1,17 @@
 <?xml version="1.0"?>
+<!-- 
+1 ft  =  0.3048 m 
+1 m = 3.2808399 ft
+-->
+
 <PropertyList>
   <path>alt.ac</path>
 
   <animation>
     <type>rotate</type>
     <object-name>ALT.needle100</object-name>
-    <property>/instrumentation/altimeter/indicated-altitude-ft</property>
-    <min>0</min>
-    <max>65617</max> <!-- 20,000 m -->
-    <interpolation>
-      <entry><ind>0</ind><dep>0</dep></entry>
-      <entry><ind>65617</ind><dep>1440</dep></entry>
-    </interpolation>
+    <property>/instrumentation/altimeter/indicated-altitude-m</property>
+    <factor>0.72</factor>
     <center>
       <x-m>0</x-m>
       <y-m>0</y-m>
@@ -27,13 +27,8 @@
   <animation>
     <type>rotate</type>
     <object-name>ALT.needle1000</object-name>
-    <property>/instrumentation/altimeter/indicated-altitude-ft</property>
-    <min>0</min>
-    <max>65617</max> <!-- 20,000 m -->
-    <interpolation>
-      <entry><ind>0</ind><dep>0</dep></entry>
-      <entry><ind>65617</ind><dep>144</dep></entry>
-    </interpolation>
+    <property>/instrumentation/altimeter/indicated-altitude-m</property>
+    <factor>0.072</factor>
     <center>
       <x-m>0</x-m>
       <y-m>0</y-m>

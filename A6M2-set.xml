@@ -138,6 +138,9 @@ Dec 2006 Syd Adams and Tat Nishioka
  </consumables>
  
  <instrumentation>
+    <altimeter>
+       <indicated-altitude-m type="double">0</indicated-altitude-m>
+    </altimeter>
     <magnetic-compass>
        <correction-deg type="double">0</correction-deg>
     </magnetic-compass>

@@ -131,6 +131,17 @@
      <pitch-deg>0.0</pitch-deg>
    </offsets>
  </model>
+ 
+ <animation>
+  <type>select</type>
+  <object-name>pilot</object-name>
+  <condition>
+   <greater-than>
+    <property>sim/current-view/view-number</property>
+    <value>0</value>
+   </greater-than>
+  </condition>
+ </animation>
 
 <animation>
   <type>select</type>
