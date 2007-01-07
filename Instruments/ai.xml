@@ -7,7 +7,7 @@
   <object-name>AI.needle</object-name>
   <property>/instrumentation/attitude-indicator/indicated-roll-deg</property>
   <axis>
-   <x>-1</x>
+   <x>1</x>
    <y>0</y>
    <z>0</z>
   </axis>

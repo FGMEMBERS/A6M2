@@ -86,21 +86,21 @@ Fuel capacity: 520L (134 US gal) [3]
   <!-- stalls at 67kt(78mph) with no flaps, 56kt(65mph) with full flaps [3]. -->
   <!-- approach speed should be 56-60 for carrier approach -->
   <approach speed="60" aoa="7">
-    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.25"/>
-    <control-setting axis="/controls/engines/engine[0]/mixture" value="0.75"/>
-    <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="0.5"/>
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.3"/>
+    <control-setting axis="/controls/engines/engine[0]/mixture" value="0.55"/>
+    <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="0.6"/>
     <control-setting axis="/controls/engines/engine[0]/boost" value="0.0"/>
     <control-setting axis="/controls/flight/flaps" value="1.0"/>
     <control-setting axis="/controls/gear/gear-down" value="1"/>
   </approach>
 
   <!-- Cruise configuration -->
-  <!-- Top speed; 288kt @ 4550 m (13780 ft) [1, 5] -->
+  <!-- Top speed; 288kt @ 4550 m (14927 ft) [1, 5] -->
   <cruise speed="288" alt="14927">
     <control-setting axis="/controls/engines/engine[0]/throttle" value="1.0"/>
     <control-setting axis="/controls/engines/engine[0]/mixture" value="1.0"/>
     <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="1.0"/>
-    <control-setting axis="/controls/engines/engine[0]/boost" value="0.8"/>
+    <control-setting axis="/controls/engines/engine[0]/boost" value="1.0"/>
     <control-setting axis="/controls/flight/flaps" value="0.0"/>
     <control-setting axis="/controls/gear/gear-down" value="0"/>
   </cruise>
@@ -115,7 +115,7 @@ Fuel capacity: 520L (134 US gal) [3]
   -->
 <!--
    <cruise speed="135" alt="10000">
-     <control-setting axis="/controls/engines/engine[0]/throttle" value="0.653"/>
+     <control-setting axis="/controls/engines/engine[0]/throttle" value="0.353"/>
      <control-setting axis="/controls/engines/engine[0]/mixture" value="1.00"/>
      <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="0.6"/>
      <control-setting axis="/controls/engines/engine[0]/boost" value="0.0"/>
@@ -123,7 +123,6 @@ Fuel capacity: 520L (134 US gal) [3]
      <control-setting axis="/controls/gear/gear-down" value="0"/>
    </cruise>
 -->
-
   <!-- pilot's eyepoint -->
   <cockpit x="-0.44" y="0" z="0.774"/>
 
@@ -136,8 +135,8 @@ Fuel capacity: 520L (134 US gal) [3]
    -->
   <wing x="0.0" y="0.4" z="-0.35" taper="0.44" incidence="0.075"
 	length="5.6" chord="2.464" sweep="0.1" dihedral="6.5" camber="0.1"
-	twist="0.2">
-    <stall aoa="17" width="12" peak="1.5"/>
+	twist="0.2" idrag="1.25">
+    <stall aoa="14" width="12" peak="1.5"/>
     <flap0 start="0.0" end="0.4" lift="1.7" drag="1.9"/>
     <flap1 start="0.4" end="1.0" lift="1.4" drag="1.1"/>
     <control-input axis="/controls/flight/flaps" control="FLAP0"/>
@@ -176,6 +175,7 @@ Fuel capacity: 520L (134 US gal) [3]
     mass is the weight of the engine. I don't know the weight of the propeller.
     curise rpm=2500*gear_ratio, takeoff-rpm=2500 * gear_ratio * 940/950 (estimate)
     moment is 432.37 according to README.yasim, but I'm not sure.
+
    -->
   <propeller   x="1.8" y="0" z="0"
                radius="1.56"
@@ -184,14 +184,15 @@ Fuel capacity: 520L (134 US gal) [3]
                cruise-speed="288" cruise-rpm="1719"
                takeoff-power="940" takeoff-rpm="1700"
                gear-ratio="0.6875"
+               fine-stop="0.9"
                min-rpm="550" max-rpm="1719"
 	       >
     <actionpt x="2.36" y="0" z="0"/>
     <control-input axis="/controls/engines/engine[0]/propeller-pitch" control="ADVANCE" />
-    <!-- turbo-mul and wastegate-mp are 'guesstimate' -->
+    <!-- turbo-mul and wastegate-mp are set to +250mmHg (1.33 bar) -->
     <piston-engine
        eng-power="950" eng-rpm="2500"
-       turbo-mul="3.0" wastegate-mp="62"
+       turbo-mul="1.333" wastegate-mp="39.372"
        supercharger="1"
        >
       <control-input axis="/controls/engines/engine[0]/throttle" control="THROTTLE"/>
