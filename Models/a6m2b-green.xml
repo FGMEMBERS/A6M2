@@ -76,17 +76,15 @@
     </offsets>
   </model>
 
-<!--
-  <model>
-    <path>Aircraft/A6M2/Instruments/cyltemp.xml</path>
-    <offsets>
-      <x-m>-0.220</x-m>
-      <y-m>0.131</y-m>
-      <z-m>0.301</z-m>
-      <pitch-deg>-5.0</pitch-deg>
-    </offsets>
-  </model>
-  -->
+ <model>
+   <path>Aircraft/A6M2/Instruments/cyltemp.xml</path>
+   <offsets>
+     <x-m>-0.222</x-m>
+     <y-m>0.131</y-m>
+     <z-m>0.300</z-m>
+     <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+ </model>
 
   <!-- speedometer -->
   <model>
