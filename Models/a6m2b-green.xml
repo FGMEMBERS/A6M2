@@ -2,79 +2,95 @@
 
   <path>a6m2b.ac</path>
 
-  <model>
-    <path>Aircraft/A6M2/Instruments/vsi.xml</path>
-    <offsets>
-      <x-m>-0.230</x-m>
-      <y-m>0.131</y-m>
-      <z-m>0.391</z-m>
-      <pitch-deg>-5.0</pitch-deg>
-    </offsets>
-  </model>
-  
-  <model>
-    <path>Aircraft/A6M2/Instruments/ai.xml</path>
-    <offsets>
-      <x-m>-0.229</x-m>
-      <y-m>-0.036</y-m>
-      <z-m>0.500</z-m>
-      <pitch-deg>-5.0</pitch-deg>
-    </offsets>
-  </model>
+ <model>
+   <path>Aircraft/A6M2/Instruments/vsi.xml</path>
+   <offsets>
+     <x-m>-0.230</x-m>
+     <y-m>0.131</y-m>
+     <z-m>0.391</z-m>
+     <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+ </model>
+ 
+ <model>
+   <path>Aircraft/A6M2/Instruments/ai.xml</path>
+   <offsets>
+     <x-m>-0.229</x-m>
+     <y-m>-0.036</y-m>
+     <z-m>0.500</z-m>
+     <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+ </model>
 
-  <model>
-    <path>Aircraft/A6M2/Instruments/turn.xml</path>
-    <offsets>
-      <x-m>-0.229</x-m>
-      <y-m>0.057</y-m>
-      <z-m>0.500</z-m>
-      <pitch-deg>-5.0</pitch-deg>
-    </offsets>
-  </model>
+ <model>
+   <path>Aircraft/A6M2/Instruments/turn.xml</path>
+   <offsets>
+     <x-m>-0.229</x-m>
+     <y-m>0.057</y-m>
+     <z-m>0.500</z-m>
+     <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+ </model>
 
-  <!-- Tachometer -->
-  <model>
-    <path>Aircraft/A6M2/Instruments/tach.xml</path>
-    <offsets>
-      <x-m>-0.230</x-m>
-      <y-m>0.301</y-m>
-      <z-m>0.391</z-m>
-      <pitch-deg>-5.0</pitch-deg>
-    </offsets>
-  </model>
+ <model>
+   <path>Aircraft/A6M2/Instruments/asi.xml</path>
+   <offsets>
+     <x-m>-0.229</x-m>
+     <y-m>-0.108</y-m>
+     <z-m>0.391</z-m>
+     <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+ </model>
 
-  <!-- Boost gauge -->
-  <model>
-    <path>Aircraft/A6M2/Instruments/boost.xml</path>
-    <offsets>
-      <x-m>-0.220</x-m>
-      <y-m>0.300</y-m>
-      <z-m>0.301</z-m>
-      <pitch-deg>-5.0</pitch-deg>
-    </offsets>
-  </model>
+ <model>
+   <path>Aircraft/A6M2/Instruments/boost.xml</path>
+   <offsets>
+     <x-m>-0.222</x-m>
+     <y-m>0.299</y-m>
+     <z-m>0.300</z-m>
+     <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+ </model>
 
-  <!-- Oil/fuel pump pressure -->
-  <model>
-    <path>Aircraft/A6M2/Instruments/FO-psi.xml</path>
-    <offsets>
-      <x-m>-0.230</x-m>
-      <y-m>0.214</y-m>
-      <z-m>0.391</z-m>
-      <pitch-deg>-5.0</pitch-deg>
-    </offsets>
-  </model>
+ <model>
+   <path>Aircraft/A6M2/Instruments/tach.xml</path>
+   <offsets>
+     <x-m>-0.230</x-m>
+     <y-m>0.299</y-m>
+     <z-m>0.391</z-m>
+     <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+ </model>
 
-  <!-- Oil tempereture -->
-  <model>
-    <path>Aircraft/A6M2/Instruments/oiltemp.xml</path>
-    <offsets>
-      <x-m>-0.220</x-m>
-      <y-m>0.214</y-m>
-      <z-m>0.301</z-m>
-      <pitch-deg>-5.0</pitch-deg>
-    </offsets>
-  </model>
+ <model>
+   <path>Aircraft/A6M2/Instruments/oiltemp.xml</path>
+   <offsets>
+     <x-m>-0.222</x-m>
+     <y-m>0.216</y-m>
+     <z-m>0.301</z-m>
+     <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+ </model>
+
+ <model>
+   <path>Aircraft/A6M2/Instruments/FO-psi.xml</path>
+   <offsets>
+     <x-m>-0.230</x-m>
+     <y-m>0.216</y-m>
+     <z-m>0.391</z-m>
+     <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+ </model>
+
+ <model>
+   <path>Aircraft/A6M2/Instruments/alt.xml</path>
+   <offsets>
+     <x-m>-0.222</x-m>
+     <y-m>-0.108</y-m>
+     <z-m>0.300</z-m>
+     <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+ </model>
 
  <model>
    <path>Aircraft/A6M2/Instruments/cyltemp.xml</path>
@@ -86,40 +102,26 @@
    </offsets>
  </model>
 
-  <!-- speedometer -->
-  <model>
-    <path>Aircraft/A6M2/Instruments/asi.xml</path>
-    <offsets>
-      <x-m>-0.230</x-m>
-      <y-m>-0.109</y-m>
-      <z-m>0.391</z-m>
-      <pitch-deg>-5.0</pitch-deg>
-    </offsets>
-  </model>
+ <model>
+   <path>Aircraft/A6M2/Instruments/adf.xml</path>
+   <offsets>
+     <x-m>-0.222</x-m>
+     <y-m>-0.268</y-m>
+     <z-m>0.300</z-m>
+     <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+ </model>
 
-  <!-- altimeter -->
-  <model>
-    <path>Aircraft/A6M2/Instruments/alt.xml</path>
-    <offsets>
-      <x-m>-0.220</x-m>
-      <y-m>-0.109</y-m>
-      <z-m>0.301</z-m>
-      <pitch-deg>-5.0</pitch-deg>
-    </offsets>
-  </model>
+<model>
+   <path>Aircraft/A6M2/Instruments/egt.xml</path>
+   <offsets>
+     <x-m>-0.230</x-m>
+     <y-m>-0.268</y-m>
+     <z-m>0.391</z-m>
+     <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+ </model>
 
- <!--
-  <model>
-    <path>Aircraft/A6M2/Instruments/adf.xml</path>
-    <offsets>
-      <x-m>-0.220</x-m>
-      <y-m>-0.270</y-m>
-      <z-m>0.301</z-m>
-      <pitch-deg>-5.0</pitch-deg>
-    </offsets>
-  </model>
--->
- 
  <model>
    <path>Aircraft/A6M2/Models/magcompass.xml</path>
    <offsets> 
@@ -129,8 +131,18 @@
      <pitch-deg>0.0</pitch-deg>
    </offsets>
  </model>
- 
- <animation>
+
+ <model>
+   <path>Aircraft/A6M2/Models/magneto.xml</path>
+   <offsets> 
+     <x-m>-0.222</x-m>
+     <y-m>-0.187</y-m>
+     <z-m>0.300</z-m>
+     <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+ </model>
+
+<animation>
   <type>select</type>
   <object-name>pilot</object-name>
   <condition>
@@ -140,7 +152,6 @@
    </greater-than>
   </condition>
  </animation>
-
 <animation>
   <type>select</type>
   <object-name>propdisc</object-name>
