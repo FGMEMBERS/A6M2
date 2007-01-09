@@ -133,7 +133,17 @@
  </model>
 
  <model>
-   <path>Aircraft/A6M2/Models/magneto.xml</path>
+   <path>Aircraft/A6M2/Instruments/clock.xml</path>
+   <offsets> 
+     <x-m>-0.230</x-m>
+     <y-m>-0.187</y-m>
+     <z-m>0.391</z-m>
+     <pitch-deg>-5.0</pitch-deg>
+   </offsets>
+ </model>
+
+ <model>
+   <path>Aircraft/A6M2/Instruments/magneto.xml</path>
    <offsets> 
      <x-m>-0.222</x-m>
      <y-m>-0.187</y-m>

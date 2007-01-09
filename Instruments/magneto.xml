@@ -8,12 +8,12 @@
   <property>/controls/engines/engine/magnetos</property>
   <interpolation>
    <entry><ind> 0</ind><dep> 0</dep></entry>
-   <entry><ind> 1</ind><dep> 27</dep></entry>
-   <entry><ind> 2</ind><dep> 58</dep></entry>
-   <entry><ind> 3</ind><dep> 82</dep></entry>
+   <entry><ind> 1</ind><dep> -30</dep></entry>
+   <entry><ind> 2</ind><dep> -60</dep></entry>
+   <entry><ind> 3</ind><dep> -90.0</dep></entry>
   </interpolation>
   <axis>
-   <x>-1</x>
+   <x>1</x>
    <y>0</y>
    <z>0</z>
   </axis>
@@ -26,7 +26,7 @@
  
  <animation>
   <type>pick</type>
-  <object-name>Magneto.baseRH</object-name>
+  <object-name>Magneto.switchR</object-name>
   <action>
     <button>0</button>
     <repeatable>false</repeatable>
@@ -43,7 +43,7 @@
 
 <animation>
   <type>pick</type>
-  <object-name>Magneto.baseLH</object-name>
+  <object-name>Magneto.switchL</object-name>
   <action>
     <button>0</button>
     <repeatable>false</repeatable>
