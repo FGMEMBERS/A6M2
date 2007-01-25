@@ -169,7 +169,7 @@
   <object-name>propdisc</object-name>
   <condition>
    <greater-than>
-    <property>/engines/engine[0]/rpm</property>
+    <property>engines/engine[0]/rpm</property>
     <value>1500.000</value>
    </greater-than>
   </condition>
@@ -182,11 +182,11 @@
   <condition>
   <and>
    <greater-than>
-    <property>/engines/engine[0]/rpm</property>
+    <property>engines/engine[0]/rpm</property>
     <value>600.000</value>
    </greater-than>
    <less-than>
-    <property>/engines/engine[0]/rpm</property>
+    <property>engines/engine[0]/rpm</property>
     <value>1500.001</value>
    </less-than>
    </and>
@@ -198,7 +198,7 @@
   <object-name>propeller</object-name>
   <condition>
    <less-than>
-    <property>/engines/engine/rpm</property>
+    <property>engines/engine/rpm</property>
     <value>600.001</value>
    </less-than>
   </condition>
@@ -207,7 +207,7 @@
  <animation>
   <type>spin</type>
   <object-name>propeller</object-name>
-  <property>/engines/engine/rpm</property>
+  <property>engines/engine/rpm</property>
   <center>
   <x-m>-2.391</x-m>
    <y-m>0.0</y-m>
@@ -223,7 +223,7 @@
  <animation>
   <type>spin</type>
   <object-name>propblur</object-name>
-  <property>/engines/engine/rpm</property>
+  <property>engines/engine/rpm</property>
   <center>
   <x-m>-2.391</x-m>
    <y-m>0.0</y-m>
@@ -239,7 +239,7 @@
  <animation>
   <type>spin</type>
   <object-name>propdisc</object-name>
-  <property>/engines/engine/rpm</property>
+  <property>engines/engine/rpm</property>
   <factor>0.005</factor>
   <center>
   <x-m>-2.391</x-m>
@@ -260,7 +260,7 @@
   <type>translate</type>
   <object-name>glass</object-name>
   <object-name>canopy</object-name>
-  <property>/controls/canopy/position-norm</property>
+  <property>controls/canopy/position-norm</property>
   <factor>0.73</factor>
   <axis>
    <x>1.0</x>
@@ -272,7 +272,7 @@
  <animation>
   <type>rotate</type>
   <object-name>Elevator</object-name>
-  <property>/surface-positions/elevator-pos-norm</property>
+  <property>surface-positions/elevator-pos-norm</property>
   <factor>20</factor>
   <center>
    <x-m>4.955</x-m>
@@ -289,7 +289,7 @@
  <animation>
   <type>rotate</type>
   <object-name>Rudder</object-name>
-  <property>/controls/flight/rudder</property>
+  <property>controls/flight/rudder</property>
   <factor>20</factor>
   <center>
    <x-m>5.402</x-m>
@@ -306,7 +306,7 @@
   <animation>
   <type>rotate</type>
   <object-name>LHflap</object-name>
-  <property>/surface-positions/flap-pos-norm</property>
+  <property>surface-positions/flap-pos-norm</property>
   <factor>-30</factor>
   <center>
    <x-m>0.946</x-m>
@@ -323,7 +323,7 @@
  <animation>
   <type>rotate</type>
   <object-name>RHflap</object-name>
-  <property>/surface-positions/flap-pos-norm</property>
+  <property>surface-positions/flap-pos-norm</property>
   <factor>30</factor>
   <center>
    <x-m>0.946</x-m>
@@ -340,7 +340,7 @@
  <animation>
   <type>rotate</type>
   <object-name>LHaileron</object-name>
-  <property>/surface-positions/left-aileron-pos-norm</property>
+  <property>surface-positions/left-aileron-pos-norm</property>
   <factor>-15</factor>
   <center>
    <x-m>0.718</x-m>
@@ -357,7 +357,7 @@
  <animation>
   <type>rotate</type>
   <object-name>RHaileron</object-name>
-  <property>/surface-positions/right-aileron-pos-norm</property>
+  <property>surface-positions/right-aileron-pos-norm</property>
   <factor>15</factor>
   <center>
    <x-m>0.718</x-m>
@@ -374,7 +374,7 @@
   <animation>
   <type>rotate</type>
   <object-name>hook</object-name>
-  <property>/gear/tailhook/position-norm</property>
+  <property>gear/tailhook/position-norm</property>
   <interpolation>
    <entry>
     <ind>0.0</ind>
@@ -400,7 +400,7 @@
  <animation>
   <type>rotate</type>
   <object-name>Yoke</object-name>
-  <property>/controls/flight/aileron</property>
+  <property>controls/flight/aileron</property>
   <factor>-15</factor>
   <center>
    <x-m>0.032</x-m>
@@ -417,7 +417,7 @@
  <animation>
   <type>rotate</type>
   <object-name>Yoke</object-name>
-  <property>/controls/flight/elevator</property>
+  <property>controls/flight/elevator</property>
   <factor>-15</factor>
   <center>
    <x-m>0.032</x-m>
