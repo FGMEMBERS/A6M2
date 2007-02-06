@@ -17,7 +17,7 @@ Dec 2006 Tat Nishioka
   
   <flight-model>yasim</flight-model>
   <aero>a6m2b</aero>
-  <fuel-fraction>0.70</fuel-fraction>
+  <fuel-fraction>0.80</fuel-fraction>
 
   <virtual-cockpit archive="y">true</virtual-cockpit>
   <allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>
@@ -30,6 +30,18 @@ Dec 2006 Tat Nishioka
    <path>Aircraft/A6M2/Models/a6m2b-green.xml</path>
   </model> 
 
+  <systems>
+    <electrical>
+      <path></path>
+    </electrical>
+  </systems>
+
+  <number-views>8</number-views>
+
+  <current-view>
+  <altitude-offset type="double">90.0</altitude-offset>  
+  </current-view>
+
   <view n="0">
    <internal archive="y">true</internal>
    <config>
@@ -39,6 +51,40 @@ Dec 2006 Tat Nishioka
     <pitch-offset-deg>-13.0</pitch-offset-deg>
    </config>
   </view>
+
+  <view n="6">
+    <name>Nimitz View</name>
+    <type>lookat</type>
+    <config>
+      <eye-lat-deg-path>/ai/models/carrier/position/latitude-deg</eye-lat-deg-path>
+      <eye-lon-deg-path>/ai/models/carrier/position/longitude-deg</eye-lon-deg-path>
+      <eye-heading-deg-path>/ai/models/carrier/orientation/true-heading-deg</eye-heading-deg-path>
+      <eye-alt-ft-path>/sim/current-view/altitude-offset</eye-alt-ft-path>
+      <at-model type="bool">true</at-model>
+      <at-model-idx type="int">0</at-model-idx>
+      <ground-level-nearplane-m type="double">10.0f</ground-level-nearplane-m>
+      <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+      <x-offset-m type="double">0</x-offset-m>
+      <y-offset-m type="double">0</y-offset-m>
+      <z-offset-m type="double">0</z-offset-m>
+    </config>
+  </view>  
+  
+  <view n="7">
+    <name>Nimitz Free View</name>
+    <type>lookfrom</type>
+    <config>
+      <eye-lat-deg-path>/ai/models/carrier/position/latitude-deg</eye-lat-deg-path>
+      <eye-lon-deg-path>/ai/models/carrier/position/longitude-deg</eye-lon-deg-path>
+      <eye-heading-deg-path>/ai/models/carrier/orientation/true-heading-deg</eye-heading-deg-path>
+      <eye-alt-ft-path>/sim/current-view/altitude-offset</eye-alt-ft-path>
+      <ground-level-nearplane-m type="double">10.0f</ground-level-nearplane-m>
+      <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
+      <x-offset-m type="double">0</x-offset-m>
+      <y-offset-m type="double">0</y-offset-m>
+      <z-offset-m type="double">0</z-offset-m>
+    </config>
+  </view>    
   
   <chase-distance-m>-18</chase-distance-m>
 
@@ -54,29 +100,28 @@ Dec 2006 Tat Nishioka
     <chat_display>1</chat_display>
   </multiplay>
 
-    <help>
-        <title>A6M2 Model 21</title>
-        <line></line>
-        <text>   </text>
-        <line></line>
-        <key>
-        <name>CTRL-D</name>
-        <desc>Open / Close Canopy</desc>
-        </key>
-        <key>
-        <name>CTRL-B</name>
-        <desc>Toggle Super Charger (2 stages)</desc>
-        </key>
-        <key>
-        <name>Shift-n</name>
-        <desc>Coarse propeller pitch</desc>
-        </key>
-        <key>
-        <name>n</name>
-        <desc>Fine propeller pitch</desc>
-        </key>
-    </help>
-
+  <help>
+    <title>A6M2 Model 21</title>
+    <line></line>
+    <text>   </text>
+    <line></line>
+    <key>
+      <name>CTRL-D</name>
+      <desc>Open / Close Canopy</desc>
+    </key>
+    <key>
+      <name>CTRL-B</name>
+      <desc>Toggle Super Charger (2 stages)</desc>
+    </key>
+    <key>
+      <name>n</name>
+      <desc>Fine propeller pitch</desc>
+    </key>
+    <key>
+      <name>Shift-n</name>
+      <desc>Coarse propeller pitch</desc>
+    </key>
+  </help>
  </sim>
 
  <engines>
@@ -203,11 +248,9 @@ Dec 2006 Tat Nishioka
  <nasal>
     <A6M2>
     <file>Aircraft/A6M2/Nasal/electrical.nas</file>
+    <file>Aircraft/A6M2/Nasal/jwarbirds.nas</file>
     <file>Aircraft/A6M2/Nasal/a6m2.nas</file>
     </A6M2>
 </nasal>
 
-
 </PropertyList>
-
-

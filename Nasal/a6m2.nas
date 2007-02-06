@@ -1,41 +1,50 @@
-# Mitsubishi A6M2 model 21 
-var force = 1.0;
-var alt_m = 0.0;
-var fdm_ok = 0;
-toggle_canopy = func{
-}
+# A6M2 Zero-Flighter
 
-setlistener("/sim/signals/fdm-initialized", func {
-   setprop("/instrumentation/altimeter/indicated-altitude-m",0.0);
-   setprop("/engines/engine/cyl-temp",0.0);
-   fdm_ok=1;
-});
+#
+# Zero Flight's Gear class
+# This class simulates the Zero's landing gears that
+# one gear moves at a time.
+#
+ZeroGear = {
+  new : func {
+    obj = { parents : [ZeroGear],
+            gear_direction : 1,
+	    gear_changing : 0,
+	    delay : 6,
+            first_gear : "/gear/gear[0]/position-norm",
+	    second_gear : "/gear/gear[1]/position-norm" };
+    setlistener("/controls/gear/gear-down", func { obj.transform(); });
+    setprop(obj.first_gear, 1);
+    setprop(obj.second_gear, 1);
+    return obj;
+  },
 
-updates = func{
-  setprop("/instrumentation/altimeter/indicated-altitude-m",getprop("/instrumentation/altimeter/indicated-altitude-ft") * 0.3048);
-    if(getprop("/engines/engine/running") != 0){
-    interpolate("/engines/engine/cyl-temp", 0.5 + (getprop("/controls/engines/engine/throttle")* 0.5), 150);
-    }else{
-    interpolate("/engines/engine/cyl-temp", 0.0, 500);
+  #
+  # transform the gears
+  #
+  transform : func {
+    last_direction = me.gear_direction;
+    me.gear_direction = getprop("/controls/gear/gear-down");
+    if (last_direction != me.gear_direction) {
+      interpolate(me.first_gear, me.gear_direction, me.delay);
+      settimer(func { me.transformSecondGear(); }, me.delay);
+      me.gear_changing = 1;
     }
+  },
 
-   force = getprop("/accelerations/pilot-g");
-   if(force == nil) {force = 1.0;}
-   eyepoint = getprop("sim/view/config/y-offset-m") +0.01;
-   eyepoint -= (force * 0.01);
-   if(getprop("/sim/current-view/view-number") < 1){
-      setprop("/sim/current-view/y-offset-m",eyepoint);
-      }
-  registerTimer();    
-   }
+  #
+  # Starts changing the position of the second gear
+  #
+  transformSecondGear : func {
+    interpolate(me.second_gear, me.gear_direction, me.delay);
+    me.gear_changing = 0;
+  }
+};
 
-
-registerTimer = func {
-    settimer(updates, 0);
+var a6m2 = JapaneseWarbird.new();
+var observers = [Altimeter.new(), BoostGauge.new(), CylinderTemperature.new(), GForce.new()];
+foreach (observer; observers) {
+    a6m2.addObserver(observer);
 }
 
-setlistener("/controls/canopy/opened", func {
-    var position = cmdarg().getValue();
-    interpolate("/controls/canopy/position-norm", position, 2);},1);
-
-registerTimer();
+var zero_gear = ZeroGear.new();

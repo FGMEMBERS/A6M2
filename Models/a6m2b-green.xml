@@ -254,6 +254,19 @@
 
   <!-- CONTROL SURFACES -->
 
+   <animation>
+  <type>translate</type>
+  <object-name>glass</object-name>
+  <object-name>canopy</object-name>
+  <property>controls/canopy/position-norm</property>
+  <factor>0.73</factor>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
   <animation>
     <type>rotate</type>
     <object-name>Elevator</object-name>
@@ -367,7 +380,7 @@
       </entry>
       <entry>
 	<ind>1.00</ind>
-	<dep>45.0</dep>
+	<dep>70.0</dep>
       </entry>
     </interpolation>
     <center>
@@ -380,7 +393,42 @@
       <y>1.0</y>
       <z>0.0</z>
     </axis>
-  </animation>
+</animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>Yoke</object-name>
+  <property>controls/flight/aileron</property>
+  <factor>-15</factor>
+  <center>
+   <x-m>0.032</x-m>
+   <y-m>0.0</y-m>
+   <z-m>-0.198</z-m>
+  </center>
+  <axis>
+   <x>1.0</x>
+   <y>0.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>Yoke</object-name>
+  <property>controls/flight/elevator</property>
+  <factor>-15</factor>
+  <center>
+   <x-m>0.032</x-m>
+   <y-m>0.0</y-m>
+   <z-m>-0.198</z-m>
+  </center>
+  <axis>
+   <x>0.0</x>
+   <y>1.0</y>
+   <z>0.0</z>
+  </axis>
+ </animation>
+
 
   <!--  Gear -->
 
@@ -436,7 +484,32 @@
       <y>0</y>
       <z>0</z>
     </axis>
-  </animation>
+</animation>
 
+  <animation>
+  <type>rotate</type>
+  <object-name>rrstrut</object-name>
+  <property>gear/gear[2]/position-norm</property>
+  <interpolation>
+    <entry>
+      <ind>0</ind>
+      <dep>0</dep>
+    </entry>
+    <entry>
+      <ind>1.0</ind>
+      <dep>40</dep>
+    </entry>
+  </interpolation>
+  <center>
+   <x-m>5.479</x-m>
+   <y-m>0</y-m>
+   <z-m>-0.253</z-m>
+  </center>
+  <axis>
+   <x>0</x>
+   <y>1</y>
+   <z>0</z>
+  </axis>
+ </animation>
 
 </PropertyList>

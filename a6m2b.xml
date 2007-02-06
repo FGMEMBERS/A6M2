@@ -209,9 +209,6 @@ Fuel capacity: 520L (134 US gal) [3]
 	dfric="0.2" sfric ="0.50">
     <control-input axis="/controls/gear/brake-left" control="BRAKE"/>
     <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
-    <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
-    <control-speed control="EXTEND" transition-time="6"/>
-    <control-output control="EXTEND" prop="/gear/gear[0]/position-norm"/>
   </gear>
 
   <!-- right main -->
@@ -219,9 +216,6 @@ Fuel capacity: 520L (134 US gal) [3]
 	dfric="0.2" sfric ="0.50">
     <control-input axis="/controls/gear/brake-right" control="BRAKE"/>
     <control-input axis="/controls/gear/brake-parking" control="BRAKE" split="true"/>
-    <control-input axis="/controls/gear/gear-down" control="EXTEND"/>
-    <control-speed control="EXTEND" transition-time="8"/>
-    <control-output control="EXTEND" prop="/gear/gear[1]/position-norm"/>
   </gear>
 
   <!-- Tail wheel -->
@@ -237,7 +231,7 @@ Fuel capacity: 520L (134 US gal) [3]
     dst0="0.5" dst1="-0.5"/>
   </gear>
 
-  <hook x="-4.00" y="0.0" z="-0.400" length="1.32" down-angle="40" up-angle="-5"> 
+  <hook x="-4.00" y="0.0" z="-0.400" length="1.5" down-angle="70" up-angle="-5"> 
     <control-input axis="/controls/gear/tailhook" control="HEXTEND"/>
     <control-speed control="HEXTEND" transition-time="3"/>
   </hook>
