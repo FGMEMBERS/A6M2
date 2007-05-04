@@ -41,8 +41,6 @@ Dec 2006 Syd Adams and Tat Nishioka
         </electrical>
      </systems>
 
-  <number-views>8</number-views>
-  
   <current-view>
   <altitude-offset type="double">90.0</altitude-offset>  
   </current-view>
@@ -57,7 +55,7 @@ Dec 2006 Syd Adams and Tat Nishioka
    </config>
   </view>
   
-  <view n="6">
+  <view n="100">
     <name>Nimitz View</name>
     <type>lookat</type>
     <config>
@@ -75,7 +73,7 @@ Dec 2006 Syd Adams and Tat Nishioka
     </config>
   </view>  
   
-  <view n="7">
+  <view n="101">
     <name>Nimitz Free View</name>
     <type>lookfrom</type>
     <config>
