@@ -1,36 +1,36 @@
 #
 # jwarbirds.nas - A common nas script for Japanese warbirds.
 # Feb. 03, 2006: Tat Nishioka
-# 
+#
 # Overview:
-# JapaneseWarbirds class has a collection of property "observers", 
+# JapaneseWarbirds class has a collection of property "observers",
 # which updates or overrides some FlightGear property.
-# 
-# Once this class is instanciated, its object will automatically register 
-# timer. It, then, invoke "update" methods of all registered observers on 
-# each timer event. When you add a new observer for a new gauge, write a 
-# new observer class in your aircraft's nasal script (say ki-84.nas). 
-# 
-# Usage: 
+#
+# Once this class is instanciated, its object will automatically register
+# timer. It, then, invoke "update" methods of all registered observers on
+# each timer event. When you add a new observer for a new gauge, write a
+# new observer class in your aircraft's nasal script (say ki-84.nas).
+#
+# Usage:
 # The following code in an aircraft specific nasal file (say ki-84.nas) let
 # Ki-84 use three predefined observers.
-# 
+#
 # var ki84 = JapaneseWarbirds.new();
 # var observers = [Altimeter.new(), BoostGauge.new(), GForce.new()];
 # foreach(observer; observers) { ki84.addObserver(observer)
-# 
+#
 # Design Note:
-# This script helps Japanese War-birds developers concentrate on making 
+# This script helps Japanese War-birds developers concentrate on making
 # aircraft specific observers since the common code and the aircraft specific
-# code are separated. When you make a new aircraft, copy jwarbirds.nas 
-# into its Nasal directory. Then write <aircraft_name>.nas file that contains 
-# the instanciation of JapaneseWarbirds class and aircraft specific observers. 
-# If you find several aircraft have the same observers, put these into 
+# code are separated. When you make a new aircraft, copy jwarbirds.nas
+# into its Nasal directory. Then write <aircraft_name>.nas file that contains
+# the instanciation of JapaneseWarbirds class and aircraft specific observers.
+# If you find several aircraft have the same observers, put these into
 # jwarbirds.nas. Do not put aircraft specific observers into jwarbird.nas
 #
 
 #
-# Canopy class - this is not an observer 
+# Canopy class - this is not an observer
 #
 Canopy = {
   new : func {
@@ -51,7 +51,7 @@ Canopy = {
 #
 GForce = {
   new : func {
-    obj = { parents : [GForce] };
+   obj = { parents : [GForce] };
     return obj;
   },
 
@@ -126,7 +126,7 @@ JapaneseWarbird = {
     return obj;
   },
 
-  # 
+  #
   # addObserver(observer)
   # add an observer object to the JapaneseWarbird object
   # each observer must have a method named "update"
@@ -134,11 +134,11 @@ JapaneseWarbird = {
   addObserver : func(observer) {
     append(me.observers, observer);
   },
-  
-  # 
+
+  #
   # update()
   # update each observer in turn
-  # 
+  #
   update : func {
     # checks if fdm is initialized by reading the engine's running status
     if (getprop("/engines/engine/running") != nil) {
@@ -148,7 +148,7 @@ JapaneseWarbird = {
     }
     me.registerTimer();
   },
-  
+
   #
   # timer driven function
   #

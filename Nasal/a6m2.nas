@@ -42,7 +42,7 @@ ZeroGear = {
 };
 
 var a6m2 = JapaneseWarbird.new();
-var observers = [Altimeter.new(), BoostGauge.new(), CylinderTemperature.new(), GForce.new()];
+var observers = [Altimeter.new(), BoostGauge.new(), CylinderTemperature.new()];
 foreach (observer; observers) {
     a6m2.addObserver(observer);
 }
