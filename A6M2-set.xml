@@ -41,10 +41,6 @@ Dec 2006 Syd Adams and Tat Nishioka
         </electrical>
      </systems>
 
-  <current-view>
-  <altitude-offset type="double">90.0</altitude-offset>  
-  </current-view>
-  
   <view n="0">
    <internal archive="y">true</internal>
    <config>
@@ -54,55 +50,13 @@ Dec 2006 Syd Adams and Tat Nishioka
     <pitch-offset-deg>-13.0</pitch-offset-deg>
    </config>
   </view>
-  
-  <view n="100">
-    <name>Nimitz View</name>
-    <type>lookat</type>
-    <config>
-      <eye-lat-deg-path>/ai/models/carrier/position/latitude-deg</eye-lat-deg-path>
-      <eye-lon-deg-path>/ai/models/carrier/position/longitude-deg</eye-lon-deg-path>
-      <eye-heading-deg-path>/ai/models/carrier/orientation/true-heading-deg</eye-heading-deg-path>
-      <eye-alt-ft-path>/sim/current-view/altitude-offset</eye-alt-ft-path>
-      <at-model type="bool">true</at-model>
-      <at-model-idx type="int">0</at-model-idx>
-      <ground-level-nearplane-m type="double">10.0f</ground-level-nearplane-m>
-      <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
-      <x-offset-m type="double">0</x-offset-m>
-      <y-offset-m type="double">0</y-offset-m>
-      <z-offset-m type="double">0</z-offset-m>
-    </config>
-  </view>  
-  
-  <view n="101">
-    <name>Nimitz Free View</name>
-    <type>lookfrom</type>
-    <config>
-      <eye-lat-deg-path>/ai/models/carrier/position/latitude-deg</eye-lat-deg-path>
-      <eye-lon-deg-path>/ai/models/carrier/position/longitude-deg</eye-lon-deg-path>
-      <eye-heading-deg-path>/ai/models/carrier/orientation/true-heading-deg</eye-heading-deg-path>
-      <eye-alt-ft-path>/sim/current-view/altitude-offset</eye-alt-ft-path>
-      <ground-level-nearplane-m type="double">10.0f</ground-level-nearplane-m>
-      <default-field-of-view-deg type="double">55.0</default-field-of-view-deg>
-      <x-offset-m type="double">0</x-offset-m>
-      <y-offset-m type="double">0</y-offset-m>
-      <z-offset-m type="double">0</z-offset-m>
-    </config>
-  </view>    
-  
+
   <chase-distance-m>-18</chase-distance-m>
 
   <hud>
    <enable3d>false</enable3d>
   </hud>
-  
-         <replay>
-        <disable>1</disable>
-        </replay>
 
-        <multiplay>
-        <chat_display>1</chat_display>
-        </multiplay>
-        
             <help>
         <title>A6M2 Model 21</title>
         <line></line>
@@ -232,12 +186,11 @@ Dec 2006 Syd Adams and Tat Nishioka
      <nasal>
         <A6M2>
         <file>Aircraft/A6M2/Nasal/electrical.nas</file>
+        <file>Aircraft/A6M2/Nasal/saves.nas</file>
         <file>Aircraft/A6M2/Nasal/jwarbirds.nas</file>
         <file>Aircraft/A6M2/Nasal/a6m2.nas</file>
         </A6M2>
     </nasal>
-
-
 
 </PropertyList>
 
