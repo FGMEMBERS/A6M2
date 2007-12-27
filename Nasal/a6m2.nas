@@ -5,6 +5,14 @@
 # This class simulates the Zero's landing gears that
 # one gear moves at a time.
 #
+
+var view_list =[];
+var view = props.globals.getNode("/sim").getChildren("view");
+    for(var i=0; i<size(view); i+=1){
+        append(view_list,"sim/view["~i~"]/config/default-field-of-view-deg");
+        }
+aircraft.data.add(view_list);
+
 ZeroGear = {
     new : func {
         obj = { parents : [ZeroGear],
