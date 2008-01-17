@@ -581,5 +581,81 @@
   </axis>
  </animation>
 
+ <!-- liverties -->
+ <animation>
+  <type>material</type>
+  <object-name>LHaileron_1</object-name>
+  <property-base>sim/model/A6M2/livery/material/LHaileron_1</property-base>
+   <texture-prop>texture</texture-prop>
+ </animation>
 
+ <animation>
+  <type>material</type>
+  <object-name>RHaileron_1</object-name>
+  <property-base>sim/model/A6M2/livery/material/RHaileron_1</property-base>
+   <texture-prop>texture</texture-prop>
+ </animation>
+
+ <animation>
+  <type>material</type>
+  <object-name>RHflap_1</object-name>
+  <property-base>sim/model/A6M2/livery/material/RHflap_1</property-base>
+   <texture-prop>texture</texture-prop>
+ </animation>
+
+ <animation>
+  <type>material</type>
+  <object-name>LHflap</object-name>
+  <property-base>sim/model/A6M2/livery/material/LHflap</property-base>
+   <texture-prop>texture</texture-prop>
+ </animation>
+
+ <animation>
+  <type>material</type>
+  <object-name>Fuselage</object-name>
+  <property-base>sim/model/A6M2/livery/material/Fuselage</property-base>
+   <texture-prop>texture</texture-prop>
+ </animation>
+
+ <animation>
+  <type>material</type>
+  <object-name>Elevator</object-name>
+  <property-base>sim/model/A6M2/livery/material/Elevator</property-base>
+   <texture-prop>texture</texture-prop>
+ </animation>
+
+ <animation>
+  <type>material</type>
+  <object-name>Hstab</object-name>
+  <property-base>sim/model/A6M2/livery/material/Hstab</property-base>
+   <texture-prop>texture</texture-prop>
+ </animation>
+
+ <animation>
+  <type>material</type>
+  <object-name>canopy</object-name>
+  <property-base>sim/model/A6M2/livery/material/canopy</property-base>
+   <texture-prop>texture</texture-prop>
+ </animation>
+
+ <animation>
+  <type>material</type>
+  <object-name>canopy.001</object-name>
+  <property-base>sim/model/A6M2/livery/material/canopy.001</property-base>
+   <texture-prop>texture</texture-prop>
+ </animation>
+
+ <animation>
+  <type>material</type>
+  <object-name>Rudder</object-name>
+  <property-base>sim/model/A6M2/livery/material/Rudder</property-base>
+   <texture-prop>texture</texture-prop>
+ </animation>
+
+ <animation>
+  <type>material</type>
+  <object-name>Wing</object-name>
+  <property-base>sim/model/A6M2/livery/material/Wing</property-base>
+   <texture-prop>texture</texture-prop>
+ </animation>
 </PropertyList>

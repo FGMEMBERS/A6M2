@@ -32,18 +32,9 @@
 #
 # Canopy class - this is not an observer 
 #
-
-var view_list =[];
-var view = props.globals.getNode("/sim").getChildren("view");
-    for(var i=0; i<size(view); i+=1){
-        append(view_list,"sim/view["~i~"]/config/default-field-of-view-deg");
-        }
-aircraft.data.add(view_list);
-
-
 Canopy = {
     new : func {
-        obj = { parents : [Canopy],
+        var obj = { parents : [Canopy],
         canopy : aircraft.door.new("/controls/canopy", 2) };
         setlistener("/controls/canopy/opened", func { obj.toggleOpenClose(cmdarg().getBoolValue()); }, 1);
         return obj;
@@ -60,7 +51,7 @@ Canopy = {
 #
 GForce = {
     new : func {
-    obj = { parents : [GForce] };
+    var obj = { parents : [GForce] };
     return obj;
     },
 
@@ -80,7 +71,7 @@ GForce = {
 #
 Altimeter = {
     new : func {
-        obj = { parents : [Altimeter] };
+        var obj = { parents : [Altimeter] };
         return obj;
     },
 
@@ -94,7 +85,7 @@ Altimeter = {
 #
 CylinderTemperature = {
     new: func {
-        obj = { parents : [CylinderTemperature] };
+        var obj = { parents : [CylinderTemperature] };
         setprop("/engines/engine/cyl-temp", 0.0);
         return obj;
     },
@@ -113,13 +104,13 @@ CylinderTemperature = {
 #
 BoostGauge = {
     new: func {
-        obj = { parents: [BoostGauge] };
+        var obj = { parents: [BoostGauge] };
         return obj;
     },
 
     update: func {
     # for both JSBSim and YASim version, this nil check is required since mp-osi is not set when fdm-initialized is set
-    if ((mp_osi = getprop("/engines/engine/mp-osi")) != nil) {
+    if ((var mp_osi = getprop("/engines/engine/mp-osi")) != nil) {
         interpolate("/engines/engine/boost-gauge-mmhg", mp_osi * 25.4 - 750.006168, 0.2);
         }
     }
@@ -138,7 +129,7 @@ ExhaustGasTemperature = {
 # displacement : displacement of the engine (Liter)
 #
     new : func(displacement) {
-        obj = { parents : [ExhaustGasTemperature], 
+        var obj = { parents : [ExhaustGasTemperature], 
         p_amb_sea_level : getprop("/environment/pressure-sea-level-inhg") * 3386.3886,
         displacement : displacement * 0.001 };
         setprop("/instrumentation/egt/egt-degc", getprop("/environment/temperature-degc"));
@@ -147,10 +138,11 @@ ExhaustGasTemperature = {
 
   # approx. calculation of combustion efficiency
     get_combustion_efficiency : func {
-        mixture = getprop("/controls/engines/engine/mixture");
-        thi_sea_level = 1.3 * mixture;
-        p_amb = getprop("/environment/pressure-inhg") * 3386.3886;   # ambient pressure (Pa)
-        equivalence_ratio = thi_sea_level * me.p_amb_sea_level / p_amb;
+        var combustion_efficiency = 0.0;
+        var mixture = getprop("/controls/engines/engine/mixture");
+        var thi_sea_level = 1.3 * mixture;
+        var p_amb = getprop("/environment/pressure-inhg") * 3386.3886;   # ambient pressure (Pa)
+        var equivalence_ratio = thi_sea_level * me.p_amb_sea_level / p_amb;
 
         if (equivalence_ratio < 0.9) {
             combustion_efficiency = 0.98
@@ -164,12 +156,12 @@ ExhaustGasTemperature = {
     },
 
     get_air_flow : func(t_amb) {
-    r_air = 287.3;
-    volumetric_efficiency = 0.8;
-    map = getprop("/engines/engine/mp-osi") * 6894.7573;       # manifold pressure (Pa)
-    rpm = getprop("/engines/engine/rpm");
+    var r_air = 287.3;
+    var volumetric_efficiency = 0.8;
+    var map = getprop("/engines/engine/mp-osi") * 6894.7573;       # manifold pressure (Pa)
+    var rpm = getprop("/engines/engine/rpm");
 
-    v_dot_air = (me.displacement * rpm / 60) / 2 * volumetric_efficiency;   
+    var v_dot_air = (me.displacement * rpm / 60) / 2 * volumetric_efficiency;   
     return v_dot_air * map / (r_air * t_amb);
     },
 
@@ -177,20 +169,20 @@ ExhaustGasTemperature = {
     #
     # This function is almost the same as doEGT() in JSBSim
     # except this uses some approx. calculations
-        cp_air=1005;
-        cp_fuel=1700;
-        calorific_value_fuel = 47300000;
+        var cp_air=1005;
+        var cp_fuel=1700;
+        var calorific_value_fuel = 47300000;
 
-        t_amb = getprop("/environment/temperature-degc") + 273.15;   # ambient temp. (K)
+        var t_amb = getprop("/environment/temperature-degc") + 273.15;   # ambient temp. (K)
 
         if (getprop("/engines/engine/running") == 1) {
-            combustion_efficiency = me.get_combustion_efficiency();
-            m_dot_air = me.get_air_flow(t_amb);
-            m_dot_fuel = m_dot_air / 14.7;
-            enthalpy_exhaust = m_dot_fuel * calorific_value_fuel * combustion_efficiency * 0.33;
-            heat_capacity_exhaust = (cp_air * m_dot_air) + (cp_fuel * m_dot_fuel);
-            delta_T_exhaust = enthalpy_exhaust / heat_capacity_exhaust;
-            egt = t_amb + delta_T_exhaust - 273.15;
+            var combustion_efficiency = me.get_combustion_efficiency();
+            var m_dot_air = me.get_air_flow(t_amb);
+            var m_dot_fuel = m_dot_air / 14.7;
+            var enthalpy_exhaust = m_dot_fuel * calorific_value_fuel * combustion_efficiency * 0.33;
+            var heat_capacity_exhaust = (cp_air * m_dot_air) + (cp_fuel * m_dot_fuel);
+            var delta_T_exhaust = enthalpy_exhaust / heat_capacity_exhaust;
+            var egt = t_amb + delta_T_exhaust - 273.15;
             setprop("/instrumentation/egt/egt-degc", egt);
         } else {
         # goes back to the ambient temperature in 1 min
@@ -204,7 +196,7 @@ ExhaustGasTemperature = {
 #
 JapaneseWarbird = {
     new : func {
-        obj = { parents : [JapaneseWarbird],
+        var obj = { parents : [JapaneseWarbird],
         observers : [],
         canopy : Canopy.new() };
     setlistener("/sim/signals/fdm-initialized", func { obj.registerTimer(); });
