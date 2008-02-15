@@ -160,8 +160,10 @@ ExhaustGasTemperature = {
     var volumetric_efficiency = 0.8;
     var map = getprop("/engines/engine/mp-osi") * 6894.7573;       # manifold pressure (Pa)
     var rpm = getprop("/engines/engine/rpm");
+    me.rpm = rpm;
 
     var v_dot_air = (me.displacement * rpm / 60) / 2 * volumetric_efficiency;   
+
     return v_dot_air * map / (r_air * t_amb);
     },
 
@@ -184,12 +186,68 @@ ExhaustGasTemperature = {
             var delta_T_exhaust = enthalpy_exhaust / heat_capacity_exhaust;
             var egt = t_amb + delta_T_exhaust - 273.15;
             setprop("/instrumentation/egt/egt-degc", egt);
+
+# Engine Power without mixture correction - just for test
+     var dt = 1.0 / 120.0;
+     var mp_inhg = getprop("/engines/engine/mp-osi") * 0.014138;
+     var manxrpm = mp_inhg * me.rpm;
+     var percentage_power = (0.000000006 * manxrpm * manxrpm) + (0.0008 * manxrpm) - 1.0 + ((288 - t_amb) * 7 * dt);
+     if (percentage_power < 0) {
+       percentage_power = 0.0;
+     }
+     setprop("/engines/engine/power", 950 * percentage_power);
+# end test
+
         } else {
         # goes back to the ambient temperature in 1 min
         interpolate("/instrumentation/egt/egt-degc", t_amb - 273.15, 60);
         }
     }
 };
+
+#
+# Automatic Mixture Controller
+# This class automatically adjust the mixture value depending on
+# current exhaust gas temperature (egt) and given target egt.
+# In acutal aircraft, mixture is adjusted using air density but
+# it is easier to adjust using current egt and target egt
+# 
+AutoMixtureControl = {
+  #
+  # new(target_egt_degc)
+  # target_egt_degc : egt where engine can get maximum power (Celsius)
+  #
+  new : func(target_egt_degc) {
+    var obj = {
+       parents : [AutoMixtureControl],
+       target_egt : target_egt_degc
+    };
+    setprop("/controls/engines/engine/manual-mixture-control", 0);
+    return obj;
+  },
+
+  #
+  # automatic mixture adjuster
+  #
+  update : func {
+    if (getprop("/controls/engines/engine/manual-mixture-control") != 1 and 
+        getprop("/engines/engine/running" == 1)) {
+      var mixture = getprop("/controls/engines/engine/mixture");
+      var axis = getprop("/controls/engines/engine/mixture");
+      var egt = getprop("/instrumentation/egt/egt-degc");
+      var delta = me.target_egt - egt;
+      delta = me.target_egt - egt;
+      mixture -= (delta / 1000); 
+
+      if (mixture > 1.0) {
+        mixture = 1.0;
+      } elsif (mixture < 0.0) {
+        mixture = 0.0;
+      }
+      interpolate("/controls/engines/engine/mixture", mixture, 0.5);
+    }
+  }
+}; 
 
 #
 # Japanese Warbird class - adds and updates observers

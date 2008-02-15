@@ -47,7 +47,8 @@ ZeroGear = {
 aircraft.livery.init("Aircraft/A6M2/Models/liveries", "sim/model/A6M2/livery/variant");
 
 var a6m2 = JapaneseWarbird.new();
-var observers = [Altimeter.new(), BoostGauge.new(), CylinderTemperature.new(), ExhaustGasTemperature.new(27.9)];
+var observers = [Altimeter.new(), BoostGauge.new(), CylinderTemperature.new(), 
+                 ExhaustGasTemperature.new(27.9), AutoMixtureControl.new(760)];
 foreach (observer; observers) {
     a6m2.addObserver(observer);
 }
