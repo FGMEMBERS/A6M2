@@ -91,10 +91,15 @@ CylinderTemperature = {
     },
 
     update: func {
-        if (getprop("/engines/engine/running") != 0) {
-            interpolate("/engines/engine/cyl-temp", 0.5 + (getprop("/controls/engines/engine/throttle") * 0.5), 150);
+        var cht_degf = getprop("/engines/engine/cht-degf");
+        if (cht_degf != nil) {
+          setprop("/engines/engine/cyl-temp", cht_degf / 2500);
         } else {
-        interpolate("/engines/engine/cyl-temp", 0.0, 500);
+          if (getprop("/engines/engine/running") != 0) {
+            interpolate("/engines/engine/cyl-temp", 0.5 + (getprop("/controls/engines/engine/throttle") * 0.5), 150);
+          } else {
+            interpolate("/engines/engine/cyl-temp", 0.0, 500);
+          }
         }
     }
 };
@@ -231,14 +236,13 @@ AutoMixtureControl = {
   #
   update : func {
     if (getprop("/controls/engines/engine/manual-mixture-control") != 1 and 
-        getprop("/engines/engine/running" == 1)) {
+        getprop("/engines/engine/running") == 1) {
       var mixture = getprop("/controls/engines/engine/mixture");
       var axis = getprop("/controls/engines/engine/mixture");
       var egt = getprop("/instrumentation/egt/egt-degc");
       var delta = me.target_egt - egt;
       delta = me.target_egt - egt;
       mixture -= (delta / 1000); 
-
       if (mixture > 1.0) {
         mixture = 1.0;
       } elsif (mixture < 0.0) {

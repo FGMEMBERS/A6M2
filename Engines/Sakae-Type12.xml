@@ -7,30 +7,19 @@
     name:           Sakae-Type12
     type:           piston
     power:          950 hp
+    minrpm:         1800
+    maxrpm:         2550
     augmented?      no
     injected?       no
 -->
 
 <piston_engine name="Sakae-Type12">
   <minmp unit="INHG">          6.000 </minmp>
-  <maxmp unit="INHG">         39.372 </maxmp>
+  <maxmp unit="INHG">         61.00 </maxmp>
   <displacement unit="IN3"> 1703.000 </displacement>
   <maxhp>        950.00 </maxhp>
   <cycles>         2.0 </cycles>
-  <idlerpm>      700.0 </idlerpm>
-  <maxrpm>      2550.0 </maxrpm>
+  <idlerpm>      550.0 </idlerpm>
   <maxthrottle>    1.0 </maxthrottle>
-  <minthrottle>    0.3 </minthrottle>
-<!--
-  <numboostspeeds>   2 </numboostspeeds>
-  <boostoverride>    1 </boostoverride>
-  <ratedboost1> </ratedboost1>
-  <ratedboost2> </ratedboost2>
-  <ratedpower1> </ratedpower1>
-  <ratedpower2> </ratedpower2>
-  <ratedrpm1> 1400 </ratedrpm1>
-  <ratedrpm2> 2000 </ratedrpm2>
-  <ratedaltitude1> </ratedaltitude1>
-  <ratedaltitude2> </ratedaltitude2>
--->
+  <minthrottle>    0.2 </minthrottle>
 </piston_engine>

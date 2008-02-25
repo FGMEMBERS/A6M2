@@ -7,14 +7,14 @@
     <object-name>Fuel.needle</object-name>
     <property>/engines/engine/fuel-pump-psi[0]</property>
     <min>0</min>
-    <max>7.11167</max>
+    <max>71.1167</max>
     <interpolation>
       <entry>
 	<ind>0</ind>
 	<dep>0</dep>
       </entry>
       <entry>
-	<ind>7.111673</ind>
+	<ind>71.11673</ind>
 	<dep>-180</dep>
       </entry>
     </interpolation>

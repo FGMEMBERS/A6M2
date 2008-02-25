@@ -8,7 +8,7 @@
   <author> Tatsuhiro Nishioka </author>
   <filecreationdate> 2008-02-11 </filecreationdate>
   <version>$Revison: $</version>
-  <description> A6M2 Zero (JSBSim) </description>
+  <description> A6M2 Zero (JSBSim experimental) </description>
  </fileheader>
 
 <!--
@@ -153,7 +153,7 @@
 
  <propulsion>
 
-   <engine file="Sakae-Type12">
+   <engine file="Sakae-Type12-test">
     <location unit="M">
       <x>  -1.80 </x>
       <y>   0.00 </y>
@@ -167,7 +167,7 @@
     <feed>0</feed>
     <feed>1</feed>
     <feed>2</feed>
-    <thruster file="CS-40B">
+    <thruster file="CS-40B-test">
      <location unit="M">
        <x>  -2.33 </x>
        <y>   0.00 </y>

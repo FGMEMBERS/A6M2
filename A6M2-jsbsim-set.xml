@@ -5,109 +5,18 @@
     ************************************************************************
   -->
 
-<PropertyList>
+<PropertyList include="A6M2-base.xml">
   <sim>
     <description>A6M2 Zero (JSBSim)</description>
-    <author>Syd Adams - Tat Nishioka</author>
-    <status>development</status>
-    <startup>
-      <splash-texture>Aircraft/A6M2/splash1.rgb</splash-texture>
-    </startup>
-
     
     <flight-model>jsb</flight-model>
     <aero>A6M2-jsbsim</aero>
-    <model>
-      <path>Aircraft/A6M2/Models/a6m2-anim.xml</path>
-      <A6M2>
-	<livery>
-	  <variant type="string">Gray</variant>
-        </livery>
-      </A6M2>
-    </model> 
-
-    <fuel-fraction>0.80</fuel-fraction>
-
-    <virtual-cockpit archive="y">true</virtual-cockpit>
-    <allow-toggle-cockpit archive="y">true</allow-toggle-cockpit>
-
-    <sound>
-      <path>Aircraft/A6M2/a6m2-sound.xml</path>
-    </sound>
-
-    <systems>
-      <electrical>
-        <path></path>
-      </electrical>
-    </systems>
 
     <panel>
       <path>Aircraft/A6M2/Panels/Test-panel.xml</path>
       <visibility archive="y">true</visibility>
     </panel> 
-
-    <tutorials include="a6m2-tutorial.xml"></tutorials>
-    
-    <view n="0">
-      <internal archive="y">true</internal>
-      <config>
-	<x-offset-m archive="y" type="double">0.0</x-offset-m>
-	<y-offset-m archive="y" type="double">0.84</y-offset-m>
-	<z-offset-m archive="y" type="double">0.7</z-offset-m>
-	<pitch-offset-deg>-13.0</pitch-offset-deg>
-      </config>
-    </view>
-    
-    <chase-distance-m>-18</chase-distance-m>
-
-    <hud>
-      <enable3d>false</enable3d>
-    </hud>
-    
-    <help>
-      <title>A6M2 Model 21</title>
-      <line></line>
-      <text></text>
-      <line></line>
-      <key>
-	<name>CTRL-B</name>
-	<desc>Toggle Engine Boost (2 stages)</desc>
-      </key>
-      <key>
-        <name>CTRL-D</name>
-        <desc>Open / Close Canopy</desc>
-      </key>
-      <key>
-	<name>CTRL-L</name>
-	<desc>Toggle Tailwheel Lock</desc>
-      </key>
-      <key>
-	<name>C</name>
-	<desc>Catapult Launch</desc>
-      </key>
-      <key>
-	<name>O/o</name>
-	<desc>Down/up Hook</desc>
-      </key>
-      <key>
-	<name>L</name>
-	<desc>Engage Launch bar</desc>
-      </key>
-      <key>
-        <name>l</name>
-        <desc>Open Livery Dialog</desc>
-      </key>
-    </help>
   </sim>
-
-  <engines>
-    <engine>
-      <rpm type="double">700</rpm>
-      <!-- fake unimplemented settings -->
-      <fuel-pump-psi type="double">18</fuel-pump-psi>
-      <oil-pressure-psi type="double">75</oil-pressure-psi>
-    </engine>
-  </engines>
 
   <consumables>
     <fuel>
@@ -122,105 +31,6 @@
       </tank>
     </fuel>
   </consumables>
-  
-  <instrumentation>
-    <altimeter>
-      <indicated-altitude-m type="double">0</indicated-altitude-m>
-    </altimeter>
-    <magnetic-compass>
-      <correction-deg type="double">0</correction-deg>
-    </magnetic-compass>
-  </instrumentation> 
-  
-  <controls>
-    <engines>
-      <engine>
-        <propeller-feather type="bool">false</propeller-feather>
-        <propeller-pitch type="double">0.0</propeller-pitch>
-      </engine>
-    </engines>
-    <canopy>
-      <enabled type="bool">true</enabled>
-      <position-norm>0.0</position-norm>
-      <opened type="double" >0.0</opened>
-    </canopy>
-    <gear>
-      <brake-parking>1</brake-parking>
-    </gear>
-  </controls>
-  
-  <input>
-    <keyboard include="../../Input/Keyboard/carrier-bindings.xml">
-      <key n="2">
-        <name>Ctrl-B</name>
-        <desc>Toggle engine boost.</desc>
-        <binding>
-          <command>property-adjust</command>
-          <property>/controls/engines/engine[0]/boost</property>
-          <step type="double">0.33</step>
-          <min type="double">0.0</min>
-          <max type="double">1.5</max>
-        </binding>
-        <binding>
-          <condition>
-            <greater-than>
-              <property>/controls/engines/engine[0]/boost</property>
-              <value type="double">1.0001</value>
-            </greater-than>
-          </condition>
-          <command>property-assign</command>
-          <property>/controls/engines/engine[0]/boost</property>
-          <value type="double">0.0</value>
-        </binding>
-        <binding>        
-          <condition>    
-            <greater-than>         
-              <property>/controls/engines/engine[0]/boost</property>       
-              <value type="double">0.6</value>    
-            </greater-than>        
-          </condition>   
-          <command>property-assign</command>     
-          <property>/controls/engines/engine[0]/boost</property>         
-          <value type="double">1.0</value>       
-        </binding>
-      </key>
-      <key n="4">
-        <name>Ctrl-D</name>
-        <desc>Open/close canopy</desc>
-        <binding>
-          <command>property-toggle</command>
-          <property>controls/canopy/opened</property>
-        </binding>
-      </key>
-
-      <key n="12"> 
-        <name>Ctrl-L</name>
-        <desc>Toggle Tailwheel Lock.</desc>
-        <binding> 
-          <command>property-toggle</command>
-          <property>controls/gear/tailwheel-lock</property>
-        </binding>
-      </key>
-
-      <key n="108">
-        <name>l</name>
-        <desc>Show livery select dialog</desc>
-        <binding>
-          <command>nasal</command>
-          <script>aircraft.livery.dialog.toggle()</script>
-        </binding>
-      </key>
-    </keyboard>
-  </input>
-  
-  <nasal>
-    <A6M2>
-      <file>Aircraft/A6M2/Nasal/electrical.nas</file>
-      <file>Aircraft/A6M2/Nasal/jwarbirds.nas</file>
-      <file>Aircraft/A6M2/Nasal/a6m2.nas</file>
-    </A6M2>
-  </nasal>
-
 </PropertyList>
 
 
