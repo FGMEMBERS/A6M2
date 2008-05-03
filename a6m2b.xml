@@ -33,10 +33,11 @@ Power weight ratio: 294 W/kg (0.39 hp/kg, 0.18 hp/lb)
 Normal range: 1870 km (1010 nm, 1162 mi) 
 Maximum range: 3105 km (1675 nm, 1930 mi) 
 Service Ceiling: 10000 m (33000 ft)
-Stalling speed: [3]
-  74 kt (136 km/h 85 mph) ; power off, wheels and flaps up
-  67 kt (125 km/h 78 mph) ; power off, wheels and flaps down
-  56 kt (104 km/h 65 mph) ; power on,  wheels and flaps down
+
+Decent speed : 67-73 kts
+Landing speed:  62 kts
+Takeoff speed: 71 - 79 kts
+
 Climbing time:
   0 -  4000 m:  1 min / 1000 m
   0 -  5000 m:  5 min 30 sec
@@ -85,7 +86,7 @@ Fuel capacity: 520L (134 US gal) [3]
   <!-- Approach configuration -->
   <!-- stalls at 67kt(78mph) with no flaps, 56kt(65mph) with full flaps [3]. -->
   <!-- approach speed should be 56-60 for carrier approach -->
-  <approach speed="60" aoa="9">
+  <approach speed="70" aoa="7">
     <control-setting axis="/controls/engines/engine[0]/throttle" value="0.30"/>
     <control-setting axis="/controls/engines/engine[0]/mixture" value="0.55"/>
     <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="0.6"/>
