@@ -86,7 +86,7 @@ Fuel capacity: 520L (134 US gal) [3]
   <!-- Approach configuration -->
   <!-- stalls at 67kt(78mph) with no flaps, 56kt(65mph) with full flaps [3]. -->
   <!-- approach speed should be 56-60 for carrier approach -->
-  <approach speed="70" aoa="7">
+  <approach speed="60" aoa="9">
     <control-setting axis="/controls/engines/engine[0]/throttle" value="0.30"/>
     <control-setting axis="/controls/engines/engine[0]/mixture" value="0.55"/>
     <control-setting axis="/controls/engines/engine[0]/propeller-pitch" value="0.6"/>
