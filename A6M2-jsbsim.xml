@@ -213,6 +213,8 @@
   </tank>
 
  </propulsion>
+ 
+ <system file="hook"/>
 
  <flight_control name="FCS: A6M2">
 
@@ -769,5 +771,24 @@
   </axis>
 
  </aerodynamics>
+ 
+    <external_reactions>
+ 
+ <!-- Hook-->
+ 
+    <force name="hook" frame="BODY">
+        <location unit="IN">
+            <x>176</x>
+            <y>0.0 </y>
+            <z>-20</z>
+        </location>
+        <direction>
+            <x>-1  </x>
+            <y>0</y>
+            <z>0.15</z>
+        </direction>
+    </force>
+        
+    </external_reactions>
 
 </fdm_config>
