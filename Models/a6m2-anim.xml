@@ -581,6 +581,42 @@
   </axis>
  </animation>
 
+ <!-- cockpit -->
+ <animation>
+  <type>rotate</type>
+  <object-name>throttleLever</object-name>
+  <property>controls/engines/engine[0]/throttle</property>
+  <factor>-30</factor>
+  <center>
+    <x-m>-0.06</x-m>
+    <y-m>-0.36</y-m>
+    <z-m> 0.38</z-m>
+  </center>
+  <axis>
+    <x>0</x>
+    <y>0.93969</y>
+    <z>-0.3420</z>
+  </axis>
+ </animation>
+
+ <animation>
+  <type>rotate</type>
+  <object-name>propPitchLever</object-name>
+  <property>controls/engines/engine[0]/propeller-pitch</property>
+  <factor>80</factor>
+  <center>
+    <x-m>-0.06</x-m>
+    <y-m>-0.31</y-m>
+    <z-m> 0.36</z-m>
+  </center>
+  <axis>
+    <x>0</x>
+    <y>0.93969</y>
+    <z>-0.3420</z>
+  </axis>
+ </animation>
+
+
  <!-- liverties -->
  <animation>
   <type>material</type>
@@ -658,4 +694,5 @@
   <property-base>sim/model/A6M2/livery/material/Wing</property-base>
    <texture-prop>texture</texture-prop>
  </animation>
+
 </PropertyList>
