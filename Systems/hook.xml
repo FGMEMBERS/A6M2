@@ -52,28 +52,15 @@
      <fcs_function name="systems/hook/real-pos-norm">
          <function>
              <product>
-                 <sum>
+                 <difference>
                      <property>systems/hook/tailhook-pos-deg</property>
                      <property>systems/hook/tailhook-pos-min-deg</property>
-                </sum>
+                </difference>
                      <property>systems/hook/coef-degtopos</property>
              </product>
          </function>
          <output>gear/tailhook-pos-norm</output>
     </fcs_function>
-     
-     
-     <!--<summer name="systems/hook/real-pos-norm">
-         <input>systems/hook/tailhook-pos-deg</input>
-         <input>systems/hook/tailhook-pos-min-deg</input>
-     </summer>
-     <pure_gain name="systems/hook/geartailhook-pos-norm">
-         <input>systems/hook/real-pos-norm</input>
-         <gain>0.01429</gain>
-         <output>gear/tailhook-pos-norm</output>
-     </pure_gain>-->
-     
-     
 
      <switch name="systems/hook/ready">
           <default value="0"/>
