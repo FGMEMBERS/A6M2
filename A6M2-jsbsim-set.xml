@@ -8,7 +8,7 @@
 <PropertyList include="A6M2-base.xml">
   <sim>
     <description>A6M2 Zero (JSBSim)</description>
-    
+    <author>Syd Adams - Tatsuhiro Nishioka</author>
     <flight-model>jsb</flight-model>
     <aero>A6M2-jsbsim</aero>
 

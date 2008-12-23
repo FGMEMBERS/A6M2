@@ -8,7 +8,7 @@
 <PropertyList include="A6M2-base.xml">
   <sim>
     <description>A6M2 Zero</description>
-    
+    <author>Syd Adams - Tatsuhiro Nishioka</author>
     <flight-model>yasim</flight-model>
     <aero>a6m2b</aero>
   </sim>

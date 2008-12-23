@@ -7,7 +7,6 @@
 
 <PropertyList>
   <sim>
-    <author>Syd Adams - Tat Nishioka</author>
     <status>development</status>
     <startup>
       <splash-texture>Aircraft/A6M2/splash1.rgb</splash-texture>
