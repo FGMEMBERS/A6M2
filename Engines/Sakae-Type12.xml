@@ -21,7 +21,7 @@
   <cycles>         2.0 </cycles>
   <idlerpm>      550.0 </idlerpm>
   <maxthrottle>    1.0 </maxthrottle>
-  <minthrottle>    0.2 </minthrottle>
+  <minthrottle>    0.1 </minthrottle>
 <!--
   <numboostspeeds>1</numboostspeeds>
   <boostoverride>0</boostoverride>
