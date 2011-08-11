@@ -1,4 +1,4 @@
-<?xml version="1.0"?>
+
 
 <!--
 Engine data display 
@@ -30,7 +30,7 @@ properties' values.
  <name>Aero data</name>
  
   <w-base>200</w-base>
-  <h-base>140</h-base>
+  <h-base>190</h-base>
    
    <layers>
 
@@ -39,16 +39,16 @@ properties' values.
      <texture>   
      <path>Aircraft/A6M2/Panels/engine.rgb</path>
      <x1>0.0</x1>
-     <y1>0.44531</y1>
-     <x2>0.78516</x2>
+     <y1>0.0</y1>
+     <x2>1.0</x2>
      <y2>1.0</y2>
      </texture>
      <w>200</w>
-     <h>140</h>
+     <h>190</h>
     </layer>
 
   <layer>
-    <name>Display field 1</name>
+    <name>Display field 1 - Thrust</name>
     <type>text</type>
     <font>led</font>
     <point-size>6</point-size>
@@ -71,13 +71,13 @@ properties' values.
      </transformation>
      <transformation>
       <type>y-shift</type>
-      <offset>42</offset>
+      <offset>70</offset>
      </transformation>
     </transformations>
   </layer>
 
   <layer>
-    <name>Display field 2</name>
+    <name>Display field 2 - MP-OSI</name>
     <type>text</type>
     <font>led</font>
     <point-size>6</point-size>
@@ -100,13 +100,42 @@ properties' values.
      </transformation>
      <transformation>
       <type>y-shift</type>
-      <offset>20</offset>
+      <offset>48</offset>
      </transformation>
     </transformations>
   </layer>
 
   <layer>
-    <name>Display field 3</name>
+    <name>Display field 3 - Fuel Flow</name>
+    <type>text</type>
+    <font>led</font>
+    <point-size>6</point-size>
+    <color>
+     <red>1.0</red>
+     <green>1.0</green>
+     <blue>1.0</blue>
+    </color>
+    <chunks>
+     <chunk>
+      <type>number-value</type>
+      <property>/engines/engine[0]/fuel-flow-gph</property>
+      <format>%6.2f</format>
+     </chunk>
+    </chunks>
+    <transformations>
+     <transformation>
+      <type>x-shift</type>
+      <offset>30</offset>
+     </transformation>
+     <transformation>
+      <type>y-shift</type>
+      <offset>27</offset>
+     </transformation>
+    </transformations>
+  </layer>
+
+  <layer>
+    <name>Display field 4 PROP-RPM</name>
     <type>text</type>
     <font>led</font>
     <point-size>6</point-size>
@@ -129,13 +158,42 @@ properties' values.
      </transformation>
      <transformation>
       <type>y-shift</type>
-      <offset>-3</offset>
+      <offset>6</offset>
      </transformation>
     </transformations>
   </layer>
 
   <layer>
-    <name>Display field 4</name>
+    <name>Display field 5 - Prop pitch </name>
+    <type>text</type>
+    <font>led</font>
+    <point-size>6</point-size>
+    <color>
+     <red>1.0</red>
+     <green>1.0</green>
+     <blue>1.0</blue>
+    </color>
+    <chunks>
+     <chunk>
+      <type>number-value</type>
+      <property>/fdm/jsbsim/propulsion/engine/blade-angle</property>
+      <format>%6.1f</format>
+     </chunk>
+    </chunks>
+    <transformations>
+     <transformation>
+      <type>x-shift</type>
+     <offset>30</offset>
+     </transformation>
+     <transformation>
+      <type>y-shift</type>
+      <offset>-15</offset>
+     </transformation>
+    </transformations>
+  </layer>
+
+  <layer>
+    <name>Display field 6 - Advance Ratio</name>
     <type>text</type>
     <font>led</font>
     <point-size>6</point-size>
@@ -148,26 +206,23 @@ properties' values.
      <chunk>
       <type>number-value</type>
       <property>/fdm/jsbsim/propulsion/engine/advance-ratio</property>
-<!--
-      <property>/engines/engine[0]/fuel-flow-gph</property>
--->
-      <format>%6.1f</format>
+      <format>%6.2f</format>
      </chunk>
     </chunks>
     <transformations>
      <transformation>
       <type>x-shift</type>
-     <offset>30</offset>
+      <offset>30</offset>
      </transformation>
      <transformation>
       <type>y-shift</type>
-      <offset>-26</offset>
+      <offset>-36</offset>
      </transformation>
     </transformations>
   </layer>
 
   <layer>
-    <name>Display field 5</name>
+    <name>Display field 7 - Power</name>
     <type>text</type>
     <font>led</font>
     <point-size>6</point-size>
@@ -179,7 +234,7 @@ properties' values.
     <chunks>
      <chunk>
       <type>number-value</type>
-      <property>/engines/engine[0]/thruster/pitch</property>
+      <property>/fdm/jsbsim/propulsion/engine/power-hp</property>
       <format>%6.1f</format>
      </chunk>
     </chunks>
@@ -190,11 +245,10 @@ properties' values.
      </transformation>
      <transformation>
       <type>y-shift</type>
-      <offset>-50</offset>
+      <offset>-57</offset>
      </transformation>
     </transformations>
   </layer>
-
   </layers>
 </PropertyList>
 

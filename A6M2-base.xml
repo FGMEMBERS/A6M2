@@ -51,7 +51,7 @@
     <chase-distance-m>-18</chase-distance-m>
 
     <hud>
-      <enable3d>false</enable3d>
+      <enable3d n="1">false</enable3d>
     </hud>
     
     <help>
@@ -169,6 +169,46 @@
         </binding>
       </key>
 
+      <key n="5">
+        <name>Ctrl-E</name>
+        <desc>Adjust aileron trim to the left</desc>
+        <repeatable type="bool">true</repeatable>
+        <binding>
+          <command>property-adjust</command>
+          <property>/controls/flight/aileron-trim</property>
+          <step type="double">-0.001</step>
+        </binding>
+        <mod-shift>
+         <desc>Adjust rudder trim to the left</desc>
+         <repeatable type="bool">true</repeatable>
+         <binding>
+           <command>property-adjust</command>
+           <property>/controls/flight/rudder-trim</property>
+           <step type="double">-0.001</step>
+         </binding>
+        </mod-shift>
+      </key>
+
+      <key n="6">
+       <name>Ctrl-F</name>
+        <desc>Adjust aileron trim to the right</desc>
+        <repeatable type="bool">true</repeatable>
+        <binding>
+         <command>property-adjust</command>
+         <property>/controls/flight/aileron-trim</property>
+         <step type="double">0.001</step>
+        </binding>
+        <mod-shift>
+         <desc>Adjust rudder trim to the right</desc>
+         <repeatable type="bool">true</repeatable>
+         <binding>
+           <command>property-adjust</command>
+           <property>/controls/flight/rudder-trim</property>
+           <step type="double">0.001</step>
+         </binding>
+        </mod-shift>
+      </key>
+
       <key n="12"> 
         <name>Ctrl-L</name>
         <desc>Toggle Tailwheel Lock.</desc>
@@ -177,6 +217,41 @@
           <property>controls/gear/tailwheel-lock</property>
         </binding>
       </key>
+
+      <key n="13">
+        <name>Ctrl-M</name>
+        <desc>Toggle Auto Micture Control</desc>
+        <binding> 
+          <command>property-toggle</command>
+          <property>controls/engines/engine/manual-mixture-control</property>
+        </binding>
+      </key>
+
+      <key n="15">
+        <name>Ctrl-O</name>
+        <desc>Toggle Seat Position for Landing</desc>
+        <binding> 
+          <command>nasal</command>
+          <script>
+            var view_num = getprop("/sim/current-view/view-number");
+            if (view_num == 0) {
+              var status = getprop("/sim/view/seat-pos");
+              if (status != 1) {
+                setprop("/sim/current-view/y-offset-m", 0.94);
+                setprop("/sim/current-view/z-offset-m", 0.69);
+                setprop("/sim/current-view/pitch-offset-deg", -8.6);
+                setprop("/sim/view/seat-pos", 1);
+              } else {
+                setprop("/sim/current-view/y-offset-m", 0.84);
+                setprop("/sim/current-view/z-offset-m", 0.7);
+                setprop("/sim/current-view/pitch-offset-deg", -13.0);
+                setprop("/sim/view/seat-pos", 0);
+              }
+            }
+          </script>
+        </binding>
+      </key>
+
 
       <key n="108">
         <name>l</name>
@@ -189,14 +264,6 @@
     </keyboard>
   </input>
   
-  <nasal>
-    <A6M2>
-      <file>Aircraft/A6M2/Nasal/electrical.nas</file>
-      <file>Aircraft/A6M2/Nasal/jwarbirds.nas</file>
-      <file>Aircraft/A6M2/Nasal/a6m2.nas</file>
-    </A6M2>
-  </nasal>
-
 </PropertyList>
 
 

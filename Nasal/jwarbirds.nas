@@ -105,6 +105,25 @@ CylinderTemperature = {
 };
 
 #
+#  CylinderTemperatureJSB - unit converter from jsb-degF to fg-degC
+#
+CylinderTemperatureJSB = {
+    new: func {
+        var obj = { parents: [CylinderTemperatureJSB] };
+        setprop("/engines/engine/cyl-temp", getprop("/fdm/jsbsim/propulsion/engine/cht-degF"));
+        return obj;
+    },
+
+    update: func {
+    # for JSBSim version, this nil check may be paranoid
+    if ((var cht_f = getprop("/fdm/jsbsim/propulsion/engine/cht-degF")) != nil) {
+        var cht_c = (cht_f-32.0)/1.8;
+        setprop("/engines/engine/cyl-temp", cht_c);
+        }
+    }
+};
+
+#
 # BoostGause observer - unit converter from inHg to mmHg
 #
 BoostGauge = {
@@ -116,7 +135,28 @@ BoostGauge = {
     update: func {
     # for both JSBSim and YASim version, this nil check is required since mp-osi is not set when fdm-initialized is set
     if ((var mp_osi = getprop("/engines/engine/mp-osi")) != nil) {
-        interpolate("/engines/engine/boost-gauge-mmhg", mp_osi * 25.4 - 750.006168, 0.2);
+        var pressure = 29.92;#getprop("/systems/static/pressure-inhg");
+        interpolate("/engines/engine/boost-gauge-mmhg", (mp_osi - pressure) * 25.4, 0.2);
+        }
+    }
+};
+
+#
+# ExhaustGasTemperatureJSB - unit converter from jsb-degF to fg-degC
+#
+ExhaustGasTemperatureJSB = {
+    new: func {
+        var obj = { parents: [ExhaustGasTemperatureJSB] };
+        setprop("/instrumentation/egt/egt-degc", 0);
+        return obj;
+    },
+
+    update: func {
+    # for JSBSim version, this nil check may be paranoid
+    if ((var egt_f = getprop("/engines/engine/egt-degf")) != nil) {
+#        var egt_c = (egt_f-32.0)/1.8;
+         var egt_c = egt_f;
+        setprop("/instrumentation/egt/egt-degc", egt_c);
         }
     }
 };
