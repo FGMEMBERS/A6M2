@@ -107,38 +107,4 @@
  <output>propulsion/engine[#]/volumetric-efficiency</output>
 </fcs_function>
 
-
-
- <!-- data below will be ignored in the current FGPiston -->
- <!-- +-200mmHg to adjust engine power for constant speed prop -->
- <maxgovernorpressure>20.0</maxgovernorpressure> 
- <governorrate>0.1</governorrate>
-  <!-- RPM \ FT -->
-  <table name="C_POWER" type="internal">
-    <tableData>
-         <!--   0  1000  2000  3000  4000  4200  5000  6000  7000  8000  9000 10000 -->
-                0  3281  6562  9843 13123 13780 16404 19685 22966 26247 29528 32808
-          0     0     0     0     0     0     0     0     0     0     0     0     0
-       1800   628   647   629   565   505   496   450   395   345   305   268   225
-       1900   665   678   700   635   572   555   508   451   399   350   302   261
-       2000   688   713   733   704   646   624   574   512   450   397   346   299
-       2100   725   750   775   780   702   687   632   572   509   449   388   343
-       2200   749   775   802   829   772   752   698   630   570   498   437   379
-       2300   777   805   830   861   840   823   762   680   618   550   480   425
-       2400   804   830   862   893   910   890   825   748   673   597   526   464
-       2500   825   853   880   920   945   950   890   803   725   643   571   497
-       2550   833   870   898   938   964   969   908   819   740   656   582   507 
-    </tableData>
-  </table>
-
-  <!-- Throttle \ MAP -->
-  <table name="C_MAP" type="internal">
-    <tableData>
-       0.00       0
-       0.30   34.78
-       0.80   54.91
-       1.00   61.00
-    </tableData>
-  </table>   
-
 </piston_engine>

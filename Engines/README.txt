@@ -27,6 +27,15 @@ Therefore, there are some known issues shown below:
   configuration has more reasonable gas consumption (should be 85 US-GAL/H, 92 actual).
 - Engine RPM at Typical configuration can be revised a bit more.
 
+Note: 
+  Gas Milage and gas consumption per hour in cruise condition
+  This shows that 135 kt gives the longest distance
+  5.649 nm/gal @ 140 kt / 10,500ft, 28.64 gal/h
+  5.657 nm/gal @ 135 kt / 10,500ft, 27.49 gal/h
+  5.640 nm/gal @ 130 kt / 10,500ft, 26.67 gal/h
+  5.610 nm/gal @ 125 kt / 10,500ft, 25.77 gal/h         
+  5.580 nm/gal @ 120 kt / 10,500ft, 24.88 gal/h
+
 References:
 [1] Unified Propulsion, Chapter VII-E Typical properller performance, MIT cource text
     http://web.mit.edu/16.unified/www/SPRING/propulsion/UnifiedPropulsion7/UnifiedPropulsion7.htm
