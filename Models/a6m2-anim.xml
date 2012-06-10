@@ -163,6 +163,13 @@
   </condition>
  </animation>
 
+    <effect>
+        <inherits-from>Effects/model-transparent</inherits-from>
+        <object-name>propdisc</object-name>
+        <object-name>propblur</object-name>
+        <object-name>glass</object-name>
+        <object-name>glass.001</object-name>
+    </effect>
 
 <animation>
   <type>select</type>
