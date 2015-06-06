@@ -1,0 +1,58 @@
+<?xml version="1.0"?>
+
+<PropertyList>
+  <sim>
+    <model>
+      <A6M2>
+        <livery>
+          <variant type="string">Fremont</variant>
+          <material>
+            <LHaileron_1>
+              <texture>Zero-h5FRE.png</texture>
+            </LHaileron_1>
+
+            <RHaileron_1>
+              <texture>Zero-h5FRE.png</texture>
+            </RHaileron_1>
+
+            <RHflap_1>
+              <texture>Zero-h5FRE.png</texture>
+            </RHflap_1>
+
+            <LHflap>
+              <texture>Zero-h5FRE.png</texture>
+            </LHflap>
+
+            <Fuselage>
+              <texture>Zero-h5FRE.png</texture>
+            </Fuselage>
+
+            <Elevator>
+              <texture>Zero-h5FRE.png</texture>
+            </Elevator>
+
+            <Hstab>
+              <texture>Zero-h5FRE.png</texture>
+            </Hstab>
+
+            <canopy>
+              <texture>Zero-h5FRE.png</texture>
+            </canopy>
+
+            <canopy.001>
+              <texture>Zero-h5FRE.png</texture>
+            </canopy.001>
+
+            <Rudder>
+              <texture>Zero-h5FRE.png</texture>
+            </Rudder>
+
+            <Wing>
+              <texture>Zero-h5FRE.png</texture>
+            </Wing>
+          </material>
+        </livery>
+      </A6M2>
+    </model>
+  </sim>
+</PropertyList>
