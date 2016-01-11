@@ -11,11 +11,12 @@
     <author>Syd Adams - Tatsuhiro Nishioka - Ron Jensen</author>
     <flight-model>jsb</flight-model>
     <aero>A6M2-jsbsim</aero>
-
+    <variant-of>A6M2</variant-of>
+    
     <panel>
       <path>Aircraft/A6M2/Panels/Test-panel.xml</path>
       <visibility archive="y">false</visibility>
-    </panel> 
+    </panel>
   </sim>
 
   <consumables>
@@ -54,9 +55,9 @@
 
     <propulsion>
       <engine>
-        <!--  
-          The following line allows us to fly zero in v2.0.0 
-          (by avoiding no-such-node error) 
+        <!--
+          The following line allows us to fly zero in v2.0.0
+          (by avoiding no-such-node error)
         -->
         <prop-induced-velocity_fps> 0</prop-induced-velocity_fps>
       </engine>
@@ -67,7 +68,5 @@
     </fcs>
    </jsbsim>
   </fdm>
-     
+
 </PropertyList>
-
-
