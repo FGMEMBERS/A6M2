@@ -11,6 +11,19 @@
     <author>Syd Adams - Tatsuhiro Nishioka</author>
     <flight-model>yasim</flight-model>
     <aero>a6m2b</aero>
+     <tags>
+      <tag>mitsubishi</tag>
+      <tag>low-wing</tag>
+      <tag>tail-dragger</tag>
+      <tag>retractable-gear</tag>
+      <tag>single-engine</tag>
+      <tag>piston</tag>
+      <tag>supercharged</tag>
+      <tag>variable-pitch</tag>
+      <tag>carrier</tag>
+      <tag>fighter</tag>
+      <tag>ww2</tag>
+    </tags>
   </sim>
 
   <consumables>

@@ -12,6 +12,19 @@
     <flight-model>jsb</flight-model>
     <aero>A6M2-jsbsim</aero>
     <variant-of>A6M2</variant-of>
+    <tags>
+      <tag>mitsubishi</tag>
+      <tag>low-wing</tag>
+      <tag>tail-dragger</tag>
+      <tag>retractable-gear</tag>
+      <tag>single-engine</tag>
+      <tag>piston</tag>
+      <tag>supercharged</tag>
+      <tag>variable-pitch</tag>
+      <tag>carrier</tag>
+      <tag>fighter</tag>
+      <tag>ww2</tag>
+    </tags>
     
     <panel>
       <path>Aircraft/A6M2/Panels/Test-panel.xml</path>
